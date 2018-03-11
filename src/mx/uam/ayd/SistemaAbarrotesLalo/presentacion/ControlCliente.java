@@ -7,7 +7,9 @@ package mx.uam.ayd.SistemaAbarrotesLalo.presentacion;
 
 import java.sql.SQLException;
 import java.text.ParseException;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import mx.uam.ayd.SistemaAbarrotesLalo.modelo.Cliente;
 import mx.uam.ayd.SistemaAbarrotesLalo.negocio.ServicioCliente;
 
 /**
@@ -16,6 +18,8 @@ import mx.uam.ayd.SistemaAbarrotesLalo.negocio.ServicioCliente;
  */
 public class ControlCliente {
      ServicioCliente  servicioCliente1=new ServicioCliente ();
+     ArrayList<Cliente> clientes=new ArrayList<Cliente>();
+   
 
     /**
      *Este metodo da inicio al controlcliente y habre la vista del menu para fiar
@@ -39,6 +43,11 @@ public class ControlCliente {
     public void iniciaAgregarCliente() {
         VentanaAgregarCliente ventanaAgregarCliente1= new VentanaAgregarCliente(this);
         ventanaAgregarCliente1.setVisible(true);
+    }
+    
+    public void iniciaModificarCLiente() {
+        VentanaListaClientes ventanaListaCliente1= new VentanaListaClientes(this);
+        ventanaListaCliente1.setVisible(true);
     }
 
     /**
@@ -67,4 +76,23 @@ public class ControlCliente {
             JOptionPane.showMessageDialog(null,"error, datos no guardados");
         }
     }
+    
+    
+    public void recuperaClientes() throws SQLException {
+           Cliente cliente;
+           for(Cliente c:servicioCliente1.recuperaClientes()){
+            cliente=new Cliente();
+            cliente.setNombre(c.getNombre());
+            cliente.setCantidad(c.getCantidad());
+            cliente.setFecha(c.getFecha());
+            clientes.add(cliente);
+        }
+            for(Cliente c:clientes){
+                 System.out.println(c.getNombre());
+        }
+        VentanaListaClientes ventanaListaCliente1= new VentanaListaClientes(this);
+        ventanaListaCliente1.llegaComboBox(clientes);
+        ventanaListaCliente1.setVisible(true);
+    }
+    
 }

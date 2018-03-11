@@ -7,6 +7,7 @@ package mx.uam.ayd.SistemaAbarrotesLalo.negocio;
 
 import java.sql.SQLException;
 import java.text.ParseException;
+import java.util.ArrayList;
 import mx.uam.ayd.SistemaAbarrotesLalo.modelo.Cliente;
 import mx.uam.ayd.SistemaAbarrotesLalo.persistencia.DAOCliente;
 
@@ -16,7 +17,8 @@ import mx.uam.ayd.SistemaAbarrotesLalo.persistencia.DAOCliente;
  */
 public class ServicioCliente {
         DAOCliente daoCliente=new DAOCliente();
-
+       ArrayList<Cliente> clientes=new ArrayList<Cliente>();
+   
     /**
      *Este metodo crea al cliente ypasa 
      * todos los datos del control a la base de datos para agregar un cliente
@@ -35,6 +37,18 @@ public class ServicioCliente {
         cliente.setFecha(fecha);
         comprueva=daoCliente.agregaCliente(cliente);
         return comprueva;
+    }
+    
+    public ArrayList<Cliente> recuperaClientes() throws SQLException {
+            Cliente cliente;
+        for(Cliente c:daoCliente.recuperameClientes()){
+            cliente=new Cliente();
+            cliente.setNombre(c.getNombre());
+            cliente.setCantidad(c.getCantidad());
+            cliente.setFecha(c.getFecha());
+            clientes.add(cliente);
+        }
+        return clientes;
     }
     
 }
