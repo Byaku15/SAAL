@@ -1,13 +1,19 @@
 ----------------------------------------------------------------
-Sun Mar 04 23:24:57 CST 2018:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-0161-f49e-ae4c-000000b68d48 
-on database directory F:\Users\Byakuya\Documents\NetBeansProjects\Nuevo\SistemaAbarrotesLalo\BaseDeDatos with class loader sun.misc.Launcher$AppClassLoader@b4aac2 
-Loaded from file:/F:/Users/Byakuya/Desktop/derby.jar
+Wed Mar 14 12:18:12 CST 2018:
+ Iniciando instancia a816c00e-0162-25bb-dd57-000004804b70 de Derby, versión The Apache Software Foundation - Apache Derby - 10.14.1.0 - (1808820): 
+en el directorio de base de datos C:\Users\HC\Documents\NetBeansProjects\SAAL\BaseDeDatos con el cargador de clases sun.misc.Launcher$AppClassLoader@18b4aac2
+Cargado desde file:/E:/db-derby-10.14.1.0-lib/db-derby-10.14.1.0-lib/lib/derby.jar
 java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_131-b11
-user.dir=F:\Users\Byakuya\Documents\NetBeansProjects\Nuevo\SistemaAbarrotesLalo
-os.name=Windows 7
-os.arch=x86
-os.version=6.1
+java.runtime.version=1.8.0_151-b12
+user.dir=C:\Users\HC\Documents\NetBeansProjects\SAAL
+os.name=Windows 8.1
+os.arch=amd64
+os.version=6.3
 derby.system.home=null
-Database Class Loader started - derby.database.classpath=''
+Cargador de clases de base de datos iniciado - derby.database.classpath=''
+----------------------------------------------------------------
+Wed Mar 14 12:18:23 CST 2018: cerrando motor de Derby
+----------------------------------------------------------------
+Wed Mar 14 12:18:26 CST 2018:
+Cerrando la instancia a816c00e-0162-25bb-dd57-000004804b70 en el directorio de base de datos C:\Users\HC\Documents\NetBeansProjects\SAAL\BaseDeDatos con cargador de clases sun.misc.Launcher$AppClassLoader@18b4aac2
+----------------------------------------------------------------
