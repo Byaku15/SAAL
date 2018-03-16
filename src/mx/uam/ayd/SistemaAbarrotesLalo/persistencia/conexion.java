@@ -198,6 +198,36 @@ public class conexion {
         }
         return comprueva;
     }
+         /**
+          * Este metodo consulta la BD y actualiza al cliente
+          * @param nombreAntiguo
+          * @param nombreNuevo
+          * @param cantidad
+          * @param fecha
+          * @return 
+          */
+    public int modificaCliente(String nombreAntiguo, String nombreNuevo, Double cantidad, String fecha) {
+          int retorno=0;
+        try{
+            stmt = con.prepareStatement("UPDATE CLIENTE  SET NOMBRECLIENTE=?, DEUDA=?,FECHADEUDA=?"
+            + " WHERE NOMBRECLIENTE =?");
+            stmt.setString(1,nombreNuevo);
+            stmt.setDouble(2,cantidad);
+            stmt.setString(3,fecha);
+            stmt.setString(4,nombreAntiguo);
+         
+            retorno = stmt.executeUpdate();
+            if (retorno>0)
+            {
+               retorno=1;
+            //JOptionPane.showMessageDialog(null,"Tu cliente ha sido modificado ");
+            }
+            
+        }catch(SQLException ex){
+             //JOptionPane.showMessageDialog(null,"Error"+ex.getMessage());
+        }
+        return retorno; 
+    }
     
     
 }

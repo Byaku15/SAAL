@@ -38,9 +38,14 @@ public class ServicioCliente {
         comprueva=daoCliente.agregaCliente(cliente);
         return comprueva;
     }
-    
+       /**
+        * Este metodo  recupera en un Array a todos los clientes
+        * @return
+        * @throws SQLException 
+        */
     public ArrayList<Cliente> recuperaClientes() throws SQLException {
             Cliente cliente;
+            clientes.clear();
         for(Cliente c:daoCliente.recuperameClientes()){
             cliente=new Cliente();
             cliente.setNombre(c.getNombre());
@@ -49,6 +54,19 @@ public class ServicioCliente {
             clientes.add(cliente);
         }
         return clientes;
+    }
+       /**
+        * Este metodo manda a la BD la solicitud d actualizacion
+        * @param nombreAntiguo
+        * @param nombreNuevo
+        * @param cantidad
+        * @param fecha
+        * @return 
+        */
+    public boolean actualizaCliente(String nombreAntiguo, String nombreNuevo, Double cantidad, String fecha) {
+        boolean retorno;
+        retorno=daoCliente.actualizaCliente(nombreAntiguo,nombreNuevo,cantidad,fecha);
+        return retorno;
     }
     
 }

@@ -19,6 +19,7 @@ import mx.uam.ayd.SistemaAbarrotesLalo.negocio.ServicioCliente;
 public class ControlCliente {
      ServicioCliente  servicioCliente1=new ServicioCliente ();
      ArrayList<Cliente> clientes=new ArrayList<Cliente>();
+     int numero;
    
 
     /**
@@ -76,10 +77,14 @@ public class ControlCliente {
             JOptionPane.showMessageDialog(null,"error, datos no guardados");
         }
     }
-    
+    /**
+     * Este metodo recurepa todos los clientes guardados en la lista de fiar
+     * @throws SQLException 
+     */
     
     public void recuperaClientes() throws SQLException {
            Cliente cliente;
+             clientes.clear();
            for(Cliente c:servicioCliente1.recuperaClientes()){
             cliente=new Cliente();
             cliente.setNombre(c.getNombre());
@@ -87,12 +92,52 @@ public class ControlCliente {
             cliente.setFecha(c.getFecha());
             clientes.add(cliente);
         }
-            for(Cliente c:clientes){
-                 System.out.println(c.getNombre());
-        }
         VentanaListaClientes ventanaListaCliente1= new VentanaListaClientes(this);
-        ventanaListaCliente1.llegaComboBox(clientes);
+        ventanaListaCliente1.llenaComboBox(clientes);
         ventanaListaCliente1.setVisible(true);
+    }
+       /**
+        * Este metodo permite controlar la HU modificar cliente
+        * @param cliente 
+        */
+
+    public void modificaCliente(String cliente) {
+          VentanaModificaDatosCliente ventanaModificaDatosCliente=new VentanaModificaDatosCliente(this);
+          numero=buscaCliente(cliente);
+          ventanaModificaDatosCliente.cambiaDatos(clientes.get(numero));
+          ventanaModificaDatosCliente.setVisible(true);
+    }
+        /**
+         * regresa el indice donde se encuentra el cliente que queremos
+         * @param cliente1
+         * @return 
+         */
+    private int buscaCliente(String cliente1){
+        int num=-1;
+        for(int i=0;i<clientes.size();i++){
+            if(cliente1.equals(clientes.get(i).getNombre())){
+                num=i;
+                break;
+            }
+        }
+        return num;
+    }
+         /**
+          * Este metodo actualiza con los datos nuevos del cliente
+          * @param nombre
+          * @param cantidad
+          * @param fecha 
+          */
+    public void actualizaCliente(String nombre, Double cantidad, String fecha) {
+        boolean retorno;
+        retorno=servicioCliente1.actualizaCliente(clientes.get(numero).getNombre(),nombre,cantidad,fecha);
+        if(retorno==true){
+            JOptionPane.showMessageDialog(null,"El cliente se modifico correctamente");
+            iniciaControlCliente();
+        }else{
+           JOptionPane.showMessageDialog(null,"ERROR,el cliente no se modifico correctamete");
+           iniciaControlCliente();
+        }
     }
     
 }
