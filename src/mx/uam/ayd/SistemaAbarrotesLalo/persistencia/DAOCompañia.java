@@ -1,7 +1,14 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package mx.uam.ayd.SistemaAbarrotesLalo.persistencia;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -14,6 +21,7 @@ import java.util.logging.Logger;
 public class DAOCompañia {
 
     conexion BaseDeDatos = new conexion();
+     ResultSet rs;
 
     /**
      * Almacena una compañia dentro de la base de datos, devuelve un booleano 
@@ -35,6 +43,26 @@ public class DAOCompañia {
             return false;
         }
          
+    }
+
+    /**
+     * Devulve un arreglo con los nombres de todas las compañias dentro de la 
+     * base de datos
+     * @return compañias
+     * @throws SQLException
+     */
+    public ArrayList<String> recuperarCompañias() throws SQLException {
+       ArrayList<String> compañias=new ArrayList<String>();
+        BaseDeDatos.getConexion();
+        rs=BaseDeDatos.consulta("SELECT NOMBRE FROM COMPAÑIA");
+        try {
+        while (rs.next()) {
+        compañias.add(rs.getString("NOMBRE"));    
+           }
+       }catch (Exception asd) {
+            System.out.println(asd);
+        }  
+       return compañias;
     }
 
 }

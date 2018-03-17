@@ -1,7 +1,9 @@
 
 package mx.uam.ayd.SistemaAbarrotesLalo.presentacion;
+
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import mx.uam.ayd.SistemaAbarrotesLalo.negocio.ServicioCompañia;
 import mx.uam.ayd.SistemaAbarrotesLalo.negocio.ServicioRecarga;
 
@@ -13,6 +15,7 @@ public class ControlRecargas {
 
     ServicioCompañia ServicioCompañia1 = new ServicioCompañia();
     ServicioRecarga servicioRecarga1= new ServicioRecarga();
+    
 
     /**
      * Inicializa la ventana referente a los casos de uso de recargas y compañias
@@ -48,7 +51,7 @@ public class ControlRecargas {
      /**
      *Abre la ventana conferente al caso de uso de registrar una recarga
      */
-    void RegistrarRecarga() {
+    void RegistrarRecarga() throws SQLException {
         VentanaRecargas ventanaRecargas2 = new VentanaRecargas(this);
         ventanaRecargas2.setVisible(true);
     }
@@ -68,8 +71,19 @@ public class ControlRecargas {
      * @param monto, fecha actual.
      * @return estado
      */
-        boolean AgregarRecarga(int monto, LocalDate fechaActual) throws SQLException {
-        boolean estado=servicioRecarga1.AgregarRecarga(monto, fechaActual);
+        boolean AgregarRecarga(int monto, LocalDate fechaActual, String compañia) throws SQLException {
+        boolean estado=servicioRecarga1.AgregarRecarga(monto, fechaActual,compañia);
         return estado;
+    }
+   /**
+     * Regresa un areglo de string para llenar el comboBox con los nombres
+     * de las compañias dentro de la base de datos
+     * @throws SQLException
+     * @return listaCompañias
+     */
+    ArrayList<String> llenaComboBox() throws SQLException {
+        ArrayList<String> listaCompañias=new ArrayList<String>();
+        listaCompañias= ServicioCompañia1.recuperarCompañias();
+        return listaCompañias;
     }
 }

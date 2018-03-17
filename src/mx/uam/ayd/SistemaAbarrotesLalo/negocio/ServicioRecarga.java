@@ -12,7 +12,8 @@ import mx.uam.ayd.SistemaAbarrotesLalo.persistencia.DAORecarga;
  */
 public class ServicioRecarga {
 DAORecarga daoRecarga1=new DAORecarga();
-int montoTotal=0, numeroRecargas=0;
+int montoTotal=0, numeroRecargas=0, montoPasado=0;
+String compañiaMax, compañiaMin;
 Recarga recarga1;
     
     /**
@@ -41,13 +42,50 @@ Recarga recarga1;
      * Agrega una entidad de recarga dentro de la base de datos
      * @param monto
      * @param fechaActual
+     * @param compañia
      * @return
      * @throws SQLException
      */
-    public boolean AgregarRecarga(int monto, LocalDate fechaActual) throws SQLException {
-       recarga1=new Recarga(fechaActual, monto); 
+    public boolean AgregarRecarga(int monto, LocalDate fechaActual, String compañia) throws SQLException {
+       recarga1=new Recarga(fechaActual, monto,compañia); 
        boolean estado=daoRecarga1.AgregaRecarga(recarga1);
-       return estado;
+        return estado;
     }
-    
+
+    /**
+     * Devuelve la compañia telefonica con mayores ventas dentro de un periodo
+     *de tiempo
+     * @param periodo
+     * @return compañiaMax
+     * @throws SQLException
+     */
+    String dameCompañiaMax(String periodo) throws SQLException {
+        compañiaMax = daoRecarga1.recuperaCompañiaMax(periodo);
+        return compañiaMax;
+    }
+
+    /**
+     * Devuelve la compañia telefonica con menores ventas dentro de un periodo
+     *de tiempo
+     * @param periodo
+     * @return compañiaMin
+     * @throws SQLException
+     */
+    String dameCompañiaMin(String periodo) throws SQLException {
+        compañiaMin = daoRecarga1.recuperaCompañiaMin(periodo);
+        return compañiaMin;
+    }
+
+    /**
+     * Devuelve el monto de un periodo de tiempo pasado
+     * @param periodo
+     * @return montoPasado
+     * @throws SQLException
+     */
+    int dameMontoPasadoRecargas(String periodo) throws SQLException {
+        montoPasado = daoRecarga1.recuperaMontosPasados(periodo);
+        // return montoPasado;
+        return 0;
+    }
+
 }
