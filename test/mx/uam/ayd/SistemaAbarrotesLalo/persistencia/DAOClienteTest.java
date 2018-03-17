@@ -5,6 +5,7 @@
  */
 package mx.uam.ayd.SistemaAbarrotesLalo.persistencia;
 
+import java.util.ArrayList;
 import mx.uam.ayd.SistemaAbarrotesLalo.modelo.Cliente;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -39,6 +40,7 @@ public class DAOClienteTest {
     }
 
     /**
+     * Prueva de la clase AgregaCLiente en el ServicioCLiente
      * Test of agregaCliente method, of class DAOCliente.
      */
     @Test
@@ -55,6 +57,41 @@ public class DAOClienteTest {
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         if(result !=expResult){
+        fail("The test case is a prototype.");
+        }
+    }
+
+    /**
+     * prueva de la clase RecuperaClientes de la clase DAOClientes
+     * Test of recuperameClientes method, of class DAOCliente.
+     */
+    @Test
+    public void testRecuperameClientes() throws Exception {
+        System.out.println("recuperameClientes");
+        DAOCliente instance = new DAOCliente();
+        ArrayList<Cliente> result = instance.recuperameClientes();
+        if(result==null){
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+        }
+    }
+
+    /**
+     * prueva del metodo actualiza cliente en la clase DAOCLiente
+     * Test of actualizaCliente method, of class DAOCliente.
+     */
+    @Test
+    public void testActualizaCliente() {
+        System.out.println("actualizaCliente");
+        String nombreAntiguo = "Alex";
+        String nombreNuevo = "Ana";
+        Double cantidad = 33.0;
+        String fecha = "02/06/2017";
+        DAOCliente instance = new DAOCliente();
+        boolean expResult = true;
+        boolean result = instance.actualizaCliente(nombreAntiguo, nombreNuevo, cantidad, fecha);
+        if(result ==expResult){
+        // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
         }
     }
