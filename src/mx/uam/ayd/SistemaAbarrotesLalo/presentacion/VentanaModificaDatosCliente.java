@@ -264,7 +264,7 @@ public class VentanaModificaDatosCliente extends javax.swing.JFrame {
          * @param date
          * @return 
          */
-    private boolean verificaFormatoDatos(String nom,String cant,Date date){
+    public boolean verificaFormatoDatos(String nom,String cant,Date date){
         boolean cont=true;  
         if(nom.isEmpty()){
             nombre=cliente.getNombre();

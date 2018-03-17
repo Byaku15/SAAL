@@ -66,6 +66,7 @@ public class ServicioCliente {
     public boolean actualizaCliente(String nombreAntiguo, String nombreNuevo, Double cantidad, String fecha) {
         boolean retorno;
         retorno=daoCliente.actualizaCliente(nombreAntiguo,nombreNuevo,cantidad,fecha);
+        System.out.println(retorno);
         return retorno;
     }
     
