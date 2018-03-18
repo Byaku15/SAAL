@@ -1,10 +1,13 @@
 package mx.uam.ayd.SistemaAbarrotesLalo.persistencia;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import mx.uam.ayd.SistemaAbarrotesLalo.modelo.Compañia;
 
 
 /**
@@ -36,5 +39,23 @@ public class DAOCompañia {
         }
          
     }
+    public Compañia modificarCompañia(String id, String nombre) {
+        BaseDeDatos.getConexion();
+        ResultSet compañia = BaseDeDatos.modifica2(id, nombre); 
+        return null;
+}
 
+    public ArrayList<String> recuperarCompañia() {
+    ArrayList<String> lista=new ArrayList<String>();
+        BaseDeDatos.getConexion();
+        ResultSet rs=BaseDeDatos.consulta("SELECT NOMBRE FROM COMPAÑIA");
+        try {
+        while (rs.next()) {
+        lista.add(rs.getString("NOMBRE"));    
+           }
+       }catch (Exception asd) {
+            System.out.println(asd);
+        }  
+       return lista;
+    }
 }

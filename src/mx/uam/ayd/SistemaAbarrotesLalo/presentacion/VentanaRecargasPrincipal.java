@@ -1,5 +1,9 @@
 package mx.uam.ayd.SistemaAbarrotesLalo.presentacion;
 
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Nallely
@@ -130,7 +134,12 @@ ControlRecargas controlRecargas1=new ControlRecargas();
     }                                                       
 
     private void jButtonModificarCompañiaActionPerformed(java.awt.event.ActionEvent evt) {                                                         
-        // TODO add your handling code here:
+         dispose();
+       try {
+           controlRecargas1.iniciaControlModificarCompañia();
+       } catch (SQLException ex) {
+           Logger.getLogger(VentanaProveedores.class.getName()).log(Level.SEVERE, null, ex);
+       }
     }                                                        
 
     private void jButtonVolverAlMenuActionPerformed(java.awt.event.ActionEvent evt) {                                                    
@@ -162,6 +171,34 @@ ControlRecargas controlRecargas1=new ControlRecargas();
             java.util.logging.Logger.getLogger(VentanaRecargasPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(VentanaRecargasPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        /* java.awt.EventQueue.invokeLater(new Runnable() {
+        public void run() {
+        new VentanaRecargasPrincipal().setVisible(true);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        /* java.awt.EventQueue.invokeLater(new Runnable() {
+        public void run() {
+        new VentanaRecargasPrincipal().setVisible(true);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        /* java.awt.EventQueue.invokeLater(new Runnable() {
+        public void run() {
+        new VentanaRecargasPrincipal().setVisible(true);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        /* java.awt.EventQueue.invokeLater(new Runnable() {
+        public void run() {
+        new VentanaRecargasPrincipal().setVisible(true);
         }
         //</editor-fold>
 

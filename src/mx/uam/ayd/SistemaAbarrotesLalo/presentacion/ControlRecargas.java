@@ -2,6 +2,8 @@
 package mx.uam.ayd.SistemaAbarrotesLalo.presentacion;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import mx.uam.ayd.SistemaAbarrotesLalo.modelo.Compañia;
 import mx.uam.ayd.SistemaAbarrotesLalo.negocio.ServicioCompañia;
 import mx.uam.ayd.SistemaAbarrotesLalo.negocio.ServicioRecarga;
 
@@ -13,6 +15,7 @@ public class ControlRecargas {
 
     ServicioCompañia ServicioCompañia1 = new ServicioCompañia();
     ServicioRecarga servicioRecarga1= new ServicioRecarga();
+    Compañia modificarCompañia;
 
     /**
      * Inicializa la ventana referente a los casos de uso de recargas y compañias
@@ -26,7 +29,14 @@ public class ControlRecargas {
      *Cuando se termine cualquier caso de uso, este metodo permite volver a mostrar
      * la pantalla principal
      */
-    void finalizaControl() {
+    
+    void iniciaControlModificarCompañia()throws SQLException  {
+       VentanaModifcarCompañia ventanaModifcarCompañia= new VentanaModifcarCompañia(this);
+       ventanaModifcarCompañia.cargaComboBox();
+       ventanaModifcarCompañia.setVisible(true);
+    }
+    
+       void finalizaControl() {
         ControlPrincipal controlPrincipal1 = new ControlPrincipal();
         controlPrincipal1.iniciaControl();
     }
@@ -45,7 +55,13 @@ public class ControlRecargas {
         VentanaAgregarCompañia ventanaCompañia = new VentanaAgregarCompañia(this);
         ventanaCompañia.setVisible(true);
     }
-     /**
+    
+    void ModificarCompañia() {
+        VentanaModifcarCompañia ventanaModifcarCompañia = new VentanaModifcarCompañia(this);
+        ventanaModifcarCompañia.setVisible(true);
+    }  
+    
+    /**
      *Abre la ventana conferente al caso de uso de registrar una recarga
      */
     void RegistrarRecarga() {
@@ -71,5 +87,23 @@ public class ControlRecargas {
         boolean AgregarRecarga(int monto, LocalDate fechaActual) throws SQLException {
         boolean estado=servicioRecarga1.AgregarRecarga(monto, fechaActual);
         return estado;
+    }
+       
+    Compañia modificarCompañia(String id, String nombre) {
+       modificarCompañia= ServicioCompañia1.modificarCompañia(id, nombre);
+       return modificarCompañia;
+    }
+
+    String modificarDatoscompañia(String nombre) {
+       VentanaModificarDatosCompañia  ventanaModificarDatosCompañia= new VentanaModificarDatosCompañia(this);
+       ventanaModificarDatosCompañia.nombre(nombre);
+       ventanaModificarDatosCompañia.setVisible(true);
+       return nombre;
+    }
+
+    public ArrayList<String> llenaComboBox()throws SQLException {
+        ArrayList<String> listarecargas=new ArrayList<String>();
+        listarecargas= ServicioCompañia1.recuperarCompañia();
+        return listarecargas;
     }
 }
