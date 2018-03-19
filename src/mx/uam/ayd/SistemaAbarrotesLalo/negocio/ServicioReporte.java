@@ -31,8 +31,8 @@ Reporte reporte1;
       numeroDeVentas=servicioventa1.dameNumeroDeVentas(periodo);
       compañiaMax=servicioRecarga1.dameCompañiaMax(periodo);
       compañiaMin=servicioRecarga1.dameCompañiaMin(periodo);
-      montoPasado= servicioventa1.dameMontoPasado(periodo);  
-      montoPasadoR=servicioRecarga1.dameMontoPasadoRecargas(periodo);  
+     // montoPasado= servicioventa1.dameMontoPasado(periodo);  
+      montoPasadoR=0; 
       return reporte1= new Reporte( numeroDeRecargas,compañiaMax,compañiaMin,montoPasadoR,
               numeroDeVentas, montoPasado,montoTotalVenta,montoTotalRecargas);      
     }

@@ -1,5 +1,9 @@
 package mx.uam.ayd.SistemaAbarrotesLalo.presentacion;
 
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Nallely
@@ -49,7 +53,11 @@ ControlRecargas controlRecargas1=new ControlRecargas();
         jButtonRegistrarRecargas.setText("Registrar recargas");
         jButtonRegistrarRecargas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonRegistrarRecargasActionPerformed(evt);
+                try {    
+                    jButtonRegistrarRecargasActionPerformed(evt);
+                } catch (SQLException ex) {
+                    Logger.getLogger(VentanaRecargasPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
 
@@ -120,7 +128,7 @@ ControlRecargas controlRecargas1=new ControlRecargas();
         controlRecargas1.AgregarCompañia();
     }                                                      
 
-    private void jButtonRegistrarRecargasActionPerformed(java.awt.event.ActionEvent evt) {                                                         
+    private void jButtonRegistrarRecargasActionPerformed(java.awt.event.ActionEvent evt) throws SQLException {                                                         
         dispose();
         controlRecargas1.RegistrarRecarga();
     }                                                        
@@ -130,7 +138,12 @@ ControlRecargas controlRecargas1=new ControlRecargas();
     }                                                       
 
     private void jButtonModificarCompañiaActionPerformed(java.awt.event.ActionEvent evt) {                                                         
-        // TODO add your handling code here:
+         dispose();
+       try {
+           controlRecargas1.iniciaControlModificarCompañia();
+       } catch (SQLException ex) {
+           Logger.getLogger(VentanaProveedores.class.getName()).log(Level.SEVERE, null, ex);
+       }
     }                                                        
 
     private void jButtonVolverAlMenuActionPerformed(java.awt.event.ActionEvent evt) {                                                    
@@ -162,6 +175,90 @@ ControlRecargas controlRecargas1=new ControlRecargas();
             java.util.logging.Logger.getLogger(VentanaRecargasPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(VentanaRecargasPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        /* java.awt.EventQueue.invokeLater(new Runnable() {
+        public void run() {
+        new VentanaRecargasPrincipal().setVisible(true);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        /* java.awt.EventQueue.invokeLater(new Runnable() {
+        public void run() {
+        new VentanaRecargasPrincipal().setVisible(true);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        /* java.awt.EventQueue.invokeLater(new Runnable() {
+        public void run() {
+        new VentanaRecargasPrincipal().setVisible(true);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        /* java.awt.EventQueue.invokeLater(new Runnable() {
+        public void run() {
+        new VentanaRecargasPrincipal().setVisible(true);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        /* java.awt.EventQueue.invokeLater(new Runnable() {
+        public void run() {
+        new VentanaRecargasPrincipal().setVisible(true);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        /* java.awt.EventQueue.invokeLater(new Runnable() {
+        public void run() {
+        new VentanaRecargasPrincipal().setVisible(true);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        /* java.awt.EventQueue.invokeLater(new Runnable() {
+        public void run() {
+        new VentanaRecargasPrincipal().setVisible(true);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        /* java.awt.EventQueue.invokeLater(new Runnable() {
+        public void run() {
+        new VentanaRecargasPrincipal().setVisible(true);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        /* java.awt.EventQueue.invokeLater(new Runnable() {
+        public void run() {
+        new VentanaRecargasPrincipal().setVisible(true);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        /* java.awt.EventQueue.invokeLater(new Runnable() {
+        public void run() {
+        new VentanaRecargasPrincipal().setVisible(true);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        /* java.awt.EventQueue.invokeLater(new Runnable() {
+        public void run() {
+        new VentanaRecargasPrincipal().setVisible(true);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        /* java.awt.EventQueue.invokeLater(new Runnable() {
+        public void run() {
+        new VentanaRecargasPrincipal().setVisible(true);
         }
         //</editor-fold>
 

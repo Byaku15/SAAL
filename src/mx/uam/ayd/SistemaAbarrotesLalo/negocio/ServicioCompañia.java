@@ -16,6 +16,7 @@ import mx.uam.ayd.SistemaAbarrotesLalo.persistencia.DAOCompañia;
  */
 public class ServicioCompañia {
    DAOCompañia DAOCompañia1= new DAOCompañia();
+   Compañia modificarCompañia;
     
     /**
      * Envia al DAO la información necesaria para crear una compañia, devuelve
@@ -39,5 +40,25 @@ public class ServicioCompañia {
         listaCompañias= DAOCompañia1.recuperarCompañias();
         return listaCompañias;
     }
-    
+
+    /**
+     *Metodo para modificar una compañia registrada
+     * @param id
+     * @param nombre
+     * @return
+     */
+    public Compañia modificarCompañia(String id, String nombre) {
+       modificarCompañia=DAOCompañia1.modificarCompañia(id,nombre);
+       return modificarCompañia;
+    }
+
+    /**
+     *Recupera Compañias dentro de la base de datos
+     * @return
+     */
+    public ArrayList<String> recuperarCompañia() {
+        ArrayList<String> listarecargas1=new ArrayList<String>();
+        listarecargas1= DAOCompañia1.recuperarCompañia();
+        return listarecargas1;
+    }
 }

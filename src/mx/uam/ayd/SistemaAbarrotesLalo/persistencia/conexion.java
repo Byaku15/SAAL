@@ -229,5 +229,24 @@ public class conexion {
         return retorno; 
     }
     
-    
+    ResultSet modifica2(String id, String nombre) {
+        ResultSet rs=null;
+        try{
+            stmt = con.prepareStatement("UPDATE Compañia  SET NOMBRE=?"
+            + "WHERE IDCOMPAÑIA =?");
+            stmt.setString(1,id);
+            stmt.setString(2,nombre);
+           
+            int retorno = stmt.executeUpdate();
+            if (retorno>0)
+            {
+            JOptionPane.showMessageDialog(null,"Tu Compañia ha sido modificado ");
+            System.out.println("Modificado correctamente");
+            }
+            
+        }catch(Exception ex){
+             JOptionPane.showMessageDialog(null,"Error"+ex.getMessage());
+        }
+        return null;  
+    }
 }
