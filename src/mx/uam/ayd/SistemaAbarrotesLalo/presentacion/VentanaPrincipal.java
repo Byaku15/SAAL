@@ -31,7 +31,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         try{
             muestraAvisoCaducados();
         }catch (SQLException ex) {
-            Logger.getLogger(VentanaPrincipalInvitado.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(VentanaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
