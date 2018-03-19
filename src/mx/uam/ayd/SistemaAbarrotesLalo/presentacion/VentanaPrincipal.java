@@ -12,6 +12,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *Esta clase define todos los elementos contenidos dentro de la ventana principal
@@ -27,6 +28,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public VentanaPrincipal(ControlPrincipal controlPrincipal) {
          controlPrincipal1=controlPrincipal;
           initComponents();
+            /*******************************Sprint 2**************************************/
+        try{
+            muestraAvisoCaducados();
+        }catch (SQLException ex) {
+            Logger.getLogger(VentanaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 
@@ -386,6 +393,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 
+    
+    /*****************************************Sprint 2**********************************************/
+    private void muestraAvisoCaducados() throws SQLException{
+        JOptionPane.showMessageDialog(null, controlPrincipal1.recuperaProductosYCaducidad(),"ALertas de caducidad", HEIGHT);
+    }
     
 }
 class listener implements WindowListener{

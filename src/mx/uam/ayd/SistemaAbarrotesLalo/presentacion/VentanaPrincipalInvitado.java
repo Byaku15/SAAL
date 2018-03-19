@@ -7,11 +7,13 @@ package mx.uam.ayd.SistemaAbarrotesLalo.presentacion;
 
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import static java.awt.image.ImageObserver.HEIGHT;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *Esta clase define todos los elementos contenidos dentro de la ventana principal
@@ -29,6 +31,12 @@ public class VentanaPrincipalInvitado extends javax.swing.JFrame {
     public VentanaPrincipalInvitado(ControlPrincipalInvitado controlPrincipalInvitado) {
         controlPrincipalInvitado1 = controlPrincipalInvitado;
         initComponents();
+                /*******************************Sprint 2**************************************/
+        try{
+            muestraAvisoCaducados();
+        }catch (SQLException ex) {
+            Logger.getLogger(VentanaPrincipalInvitado.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 
@@ -409,7 +417,14 @@ public class VentanaPrincipalInvitado extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 
-    
+         /*******************************Sprint 2**************************************/
+    private void muestraAvisoCaducados() throws SQLException{                                              
+ 
+        //dispose();      
+        //JOptionPane.showMessageDialog(null, controlPrincipalInvitado1.recuperaProductosYCaducidad());
+        JOptionPane.showMessageDialog(null, controlPrincipalInvitado1.recuperaProductosYCaducidad(), "Alertas de caducidad", HEIGHT);
+   
+    }
 
 
 

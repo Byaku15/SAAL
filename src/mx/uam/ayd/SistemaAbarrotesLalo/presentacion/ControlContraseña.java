@@ -26,7 +26,8 @@ public class ControlContraseña {
         
         ControlPrincipal controlPrincipal1 = new ControlPrincipal();
         controlPrincipal1.iniciaControl();
-        
+           /************************************************Sprint 2*****************************************************/
+        controlPrincipal1.recuperaProductosYCaducidad();
         
     }
     

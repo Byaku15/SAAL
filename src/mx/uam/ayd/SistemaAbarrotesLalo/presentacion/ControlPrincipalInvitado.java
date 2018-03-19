@@ -2,7 +2,18 @@
 package mx.uam.ayd.SistemaAbarrotesLalo.presentacion;
 
 import java.sql.SQLException;
+    /***************************************************Sprint 2. HU - Alertas productos a caducar***********************************************************/
 
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+    /***************************************************Termina Sprint 2. HU - Alertas productos a caducar*********************************************************
 
 
 /**
@@ -121,5 +132,94 @@ public class ControlPrincipalInvitado {
        controlCliente1=new ControlCliente();
        controlCliente1.iniciaControlCliente();
     }
+ /***************************************************Sprint 2. HU - Alertas productos a caducar***********************************************************/
+    /**
+     * Este metodo se encarga de recuperar los datos de los productos próximos a caducar
+     */
+    public String recuperaProductosYCaducidad(){
+        controlProducto1 = new ControlProducto();
+        ArrayList lista = new ArrayList();
+        String fechaActual;
+        Date dateActual, dateCaducidad;
+        int diferenciaFechas;
+        int dias = 4;
+        
+        try {
+           lista = controlProducto1.recuperaProductosYCaducidad();
+        }catch (SQLException ex) {
+           Logger.getLogger(ControlPrincipalInvitado.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+       
+        String output = "";
+        if(lista.isEmpty()){
+            output = "Productos por caducar:\n\tNo hay productos para mostrar";  
+        }else{          
+             for(int i = 0; i<lista.size(); i++){
+                
+                String cadena = lista.get(i).toString();
+                
+                String[] parte = cadena.split("\\|");
+                String producto = parte[0]; // Nombre del Producto
+                String fechaCaducidad = parte[1]; // dd-mm-YYYY
+                
+                fechaActual = getFechaActual();
+                dateActual = deStringToDate(fechaActual);
+                dateCaducidad = deStringToDate(fechaCaducidad);
+                
+                diferenciaFechas = diferenciasDeFechas(dateActual, dateCaducidad);
+                
+                if(diferenciaFechas <= dias)
+                    output += cadena+"\n";
+                //output += cadena +"\n";   
+             } 
+        
+        }
+        return output;
+    }
+    
+    /*
+    * Los siguientes métodos permiten hacer las operaciones entre fechas
+    *
+    */
+    public static String getFechaActual() {
+        Date ahora = new Date();
+        SimpleDateFormat formateador = new SimpleDateFormat("dd-MMMMM-yyyy");
+        return formateador.format(ahora);
+    }
+    
+    public static synchronized java.util.Date deStringToDate(String fecha) {
+        SimpleDateFormat formatoDelTexto = new SimpleDateFormat("dd-MMMMM-yyyy");
+        Date fechaEnviar = null;
+        try {
+            fechaEnviar = formatoDelTexto.parse(fecha);
+            return fechaEnviar;
+        } catch (ParseException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+    }
 
+    public static synchronized int diferenciasDeFechas(Date fechaInicial, Date fechaFinal) {
+
+        DateFormat df = DateFormat.getDateInstance(DateFormat.MEDIUM);
+        String fechaInicioString = df.format(fechaInicial);
+        try {
+            fechaInicial = df.parse(fechaInicioString);
+        } catch (ParseException ex) {
+        }
+
+        String fechaFinalString = df.format(fechaFinal);
+        try {
+            fechaFinal = df.parse(fechaFinalString);
+        } catch (ParseException ex) {
+        }
+
+        long fechaInicialMs = fechaInicial.getTime();
+        long fechaFinalMs = fechaFinal.getTime();
+        long diferencia = fechaFinalMs - fechaInicialMs;
+        double dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+        return ((int) dias);
+    }
+          /***************************************************Termina Sprint 2. HU - Alertas productos a caducar***********************************************************/
 }
