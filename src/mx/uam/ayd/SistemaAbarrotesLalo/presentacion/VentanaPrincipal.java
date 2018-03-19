@@ -27,6 +27,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public VentanaPrincipal(ControlPrincipal controlPrincipal) {
          controlPrincipal1=controlPrincipal;
           initComponents();
+        /*******************************Sprint 2**************************************/
+        try{
+            muestraAvisoCaducados();
+        }catch (SQLException ex) {
+            Logger.getLogger(VentanaPrincipalInvitado.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 
