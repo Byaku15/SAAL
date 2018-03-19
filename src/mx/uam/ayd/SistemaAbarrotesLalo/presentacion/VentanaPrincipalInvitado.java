@@ -29,6 +29,12 @@ public class VentanaPrincipalInvitado extends javax.swing.JFrame {
     public VentanaPrincipalInvitado(ControlPrincipalInvitado controlPrincipalInvitado) {
         controlPrincipalInvitado1 = controlPrincipalInvitado;
         initComponents();
+        /*******************************Sprint 2**************************************/
+        try{
+            muestraAvisoCaducados();
+        }catch (SQLException ex) {
+            Logger.getLogger(VentanaPrincipalInvitado.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 
@@ -409,7 +415,12 @@ public class VentanaPrincipalInvitado extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 
-    
+    /*******************************Sprint 2**************************************/
+    private void muestraAvisoCaducados() throws SQLException{                                              
+
+        JOptionPane.showMessageDialog(null, controlPrincipalInvitado1.recuperaProductosYCaducidad(), "Alertas de caducidad", HEIGHT);
+   
+    }
 
 
 
