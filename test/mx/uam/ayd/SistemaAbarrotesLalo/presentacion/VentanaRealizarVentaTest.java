@@ -17,22 +17,22 @@ import static org.junit.Assert.*;
  * @author Alumno CBI
  */
 public class VentanaRealizarVentaTest {
-    
+
     public VentanaRealizarVentaTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -45,7 +45,7 @@ public class VentanaRealizarVentaTest {
         System.out.println("main");
         String[] args = null;
         VentanaRealizarVenta.main(args);
-        
+
     }
 
     /**
@@ -58,9 +58,9 @@ public class VentanaRealizarVentaTest {
         String cantidad = "";
         VentanaRealizarVenta instance = null;
         int expResult = 0;
-       // int result = instance.revisarFormato(producto, cantidad);
-       // assertEquals(expResult, result);
-      
+        // int result = instance.revisarFormato(producto, cantidad);
+        // assertEquals(expResult, result);
+
     }
 
     /**
@@ -73,8 +73,8 @@ public class VentanaRealizarVentaTest {
         VentanaRealizarVenta instance = null;
         boolean expResult = false;
         //boolean result = instance.muestraError(revisarFormato);
-       // assertEquals(expResult, result);
-       
+        // assertEquals(expResult, result);
+
     }
 
     /**
@@ -84,8 +84,8 @@ public class VentanaRealizarVentaTest {
     public void testLimpiarTabla() {
         System.out.println("limpiarTabla");
         VentanaRealizarVenta instance = null;
-      //  instance.limpiarTabla();
-       
+        //  instance.limpiarTabla();
+
     }
-    
+
 }
