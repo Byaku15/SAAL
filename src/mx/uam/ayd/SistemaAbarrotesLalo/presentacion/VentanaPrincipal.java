@@ -391,7 +391,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
-
+    
+    /*******************************Sprint 2**************************************/
+    private void muestraAvisoCaducados() throws SQLException{                                              
+ 
+        //dispose();      
+        //JOptionPane.showMessageDialog(null, controlPrincipalInvitado1.recuperaProductosYCaducidad());
+        JOptionPane.showMessageDialog(null, controlPrincipal1.recuperaProductosYCaducidad(), "Alertas de caducidad", HEIGHT);
+   
+    }
     
 }
 class listener implements WindowListener{
