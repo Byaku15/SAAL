@@ -157,4 +157,27 @@ public class DAOProducto {
         return null;    
     }
     
+    
+    /**********************************************************************Sprint 2********************************************************************/
+    public ArrayList<String> recuperaProductosYCaducidad() throws SQLException {
+        ArrayList<String> lista = new ArrayList<String>();
+        String cadena; 
+        
+        BaseDeDatos.getConexion();
+        ResultSet rs1 = BaseDeDatos.consulta("SELECT NOMBRE FROM APP.PRODUCTO");
+        ResultSet rs2 = BaseDeDatos.consulta("SELECT CADUCIDAD FROM APP.PRODUCTO");
+        try {
+            
+            while (rs1.next() && rs2.next()) {
+                //lista.add(rs1.getString("NOMBRE"));   
+                cadena = rs1.getString("NOMBRE")+" | "+rs2.getString("CADUCIDAD");
+
+                lista.add(cadena);
+            }
+        }catch (Exception asd) {
+            System.out.println(asd);
+        }  
+        return lista;
+    }
+    
 }
