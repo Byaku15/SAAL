@@ -30,7 +30,8 @@ public class ControlLogin {
 
         ControlPrincipalInvitado controlPrincipalInvitado1 = new ControlPrincipalInvitado();
         controlPrincipalInvitado1.iniciaControl();
-        
+        /************************************************Sprint 2*****************************************************/
+        controlPrincipalInvitado1.recuperaProductosYCaducidad();
     }
     
     /**
