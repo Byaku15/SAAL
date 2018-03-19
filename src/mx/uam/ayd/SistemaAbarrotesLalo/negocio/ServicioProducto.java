@@ -145,4 +145,14 @@ public class ServicioProducto {
        modificarProducto=daoProducto1.modificarProducto(id,nombre, caducidad, existencias, precio, marca);
        return modificarProducto;
     }
+            
+    /****************************************************************************Sprint 2**********************************************************/
+    
+    public  ArrayList  recuperaProductosYCaducidad() throws SQLException{
+        ArrayList listaProductosCaducidad = new  ArrayList ();
+        listaProductosCaducidad = daoProducto1.recuperaProductosYCaducidad();
+        return listaProductosCaducidad;
+    
+    }
+    
 }
