@@ -147,4 +147,31 @@ public class VentanaTablaFiar extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable2;
     // End of variables declaration//GEN-END:variables
+       
+     public void llenaTabla(ArrayList<Cliente> clientes) {
+            try{
+            DefaultTableModel dt=new DefaultTableModel();
+            dt.addColumn("CLIENTE");
+            dt.addColumn("CANTIDAD");
+            dt.addColumn("FECHA");
+            for(Cliente c:clientes){     
+                Object[] fila=new Object[3];
+                fila[0]=c.getNombre();
+                fila[1]=c.getCantidad();
+                fila[2]=c.getFecha();
+                dt.addRow(fila);
+            }
+            if(dt.getRowCount()<16){
+                Object[] fila=new Object[3];
+                int numeroDeFilas=(16-dt.getRowCount());
+                for(int i=0;i<numeroDeFilas;i++){
+                    dt.addRow(fila);
+                }
+            }
+            this.jTable2.setModel(dt);
+        }catch(Exception ex){
+            
+        }
+    }
+       
 }
