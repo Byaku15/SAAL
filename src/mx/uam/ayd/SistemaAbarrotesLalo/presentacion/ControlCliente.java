@@ -52,10 +52,21 @@ public class ControlCliente {
     }
 
     /**
-     *Con este metodo se inicializa especificamente el caso de uso consultar lista de fiar
+     *Con este metodo se obtienen los datos de los clientes que deben asi como 
+     *la cantidad total de su deuda y la ultima fecha en la que pagaron
      */
-    public void iniciaTablaFiar() {
+    public void iniciaTablaFiar() throws SQLException {
+           Cliente cliente;
+           clientes.clear();
+           for(Cliente c:servicioCliente1.recuperaClientes()){
+            cliente=new Cliente();
+            cliente.setNombre(c.getNombre());
+            cliente.setCantidad(c.getCantidad());
+            cliente.setFecha(c.getFecha());
+            clientes.add(cliente);
+        }
           VentanaTablaFiar ventanaTablaFiar = new VentanaTablaFiar(this);
+          ventanaTablaFiar.llenaTabla(clientes);
           ventanaTablaFiar.setVisible(true);
     }
 
