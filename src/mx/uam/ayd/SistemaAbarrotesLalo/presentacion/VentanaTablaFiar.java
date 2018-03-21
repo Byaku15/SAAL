@@ -147,7 +147,9 @@ public class VentanaTablaFiar extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable2;
     // End of variables declaration//GEN-END:variables
-       
+       /**
+       *Con este metodo se llena la tabla con los datos de todos los clientes  
+       */
      public void llenaTabla(ArrayList<Cliente> clientes) {
             try{
             DefaultTableModel dt=new DefaultTableModel();
