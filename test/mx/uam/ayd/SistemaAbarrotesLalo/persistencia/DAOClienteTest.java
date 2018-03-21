@@ -75,25 +75,4 @@ public class DAOClienteTest {
         fail("The test case is a prototype.");
         }
     }
-
-    /**
-     * prueva del metodo actualiza cliente en la clase DAOCLiente
-     * Test of actualizaCliente method, of class DAOCliente.
-     */
-    @Test
-    public void testActualizaCliente() {
-        System.out.println("actualizaCliente");
-        String nombreAntiguo = "Alex";
-        String nombreNuevo = "Ana";
-        Double cantidad = 33.0;
-        String fecha = "02/06/2017";
-        DAOCliente instance = new DAOCliente();
-        boolean expResult = true;
-        boolean result = instance.actualizaCliente(nombreAntiguo, nombreNuevo, cantidad, fecha);
-        if(result ==expResult){
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-        }
-    }
-    
 }
