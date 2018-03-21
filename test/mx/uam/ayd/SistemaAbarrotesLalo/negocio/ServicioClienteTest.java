@@ -93,26 +93,5 @@ public class ServicioClienteTest {
         fail("The test case is a prototype.");
         }
     }
-
-    /**
-     * prueva del metodo actualizaCliente en la clase servicioCliente
-     * Test of actualizaCliente method, of class ServicioCliente.
-     */
-    @Test
-    public void testActualizaCliente() {
-        System.out.println("test del metodo actualizaCliente");
-        String nombreAntiguo = "carlos";
-        String nombreNuevo = "pepe";
-        Double cantidad = 5.7;
-        String fecha = "22/03/2018";
-        ServicioCliente instance = new ServicioCliente();
-        boolean expResult = false;
-        boolean result = instance.actualizaCliente(nombreAntiguo, nombreNuevo, cantidad, fecha);
-        //assertEquals(expResult, result);
-        if(result ==expResult){
-        // TODO review the generated test code and remove the default call to fail.
-                fail("The test case is a prototype.");
-        }
-    }
     
 }
