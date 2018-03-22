@@ -51,15 +51,16 @@ public class VentanaFinanzasTodo extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jTextFieldNumeroRecargas = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jTextFieldCompañiaMax = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        jTextFieldCompañiaMin = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jTextFieldNumeroVentas = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        jLabelMensaje = new javax.swing.JLabel();
+        jTextFieldMontoPasado = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        jTextFieldPorcentajeCrecimiento = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
 
         jLabel6.setText("Número de ventas");
@@ -107,23 +108,30 @@ public class VentanaFinanzasTodo extends javax.swing.JFrame {
 
         jLabel1.setText("Compañia con mas ventas");
 
-        jTextField1.setEditable(false);
+        jTextFieldCompañiaMax.setEditable(false);
 
         jLabel9.setText("Compañia con menos ventas");
 
-        jTextField2.setEditable(false);
+        jTextFieldCompañiaMin.setEditable(false);
+        jTextFieldCompañiaMin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldCompañiaMinActionPerformed(evt);
+            }
+        });
 
         jLabel7.setText("Número de ventas");
 
         jTextFieldNumeroVentas.setEditable(false);
 
-        jLabel10.setText("Producto con mas ventas");
+        jLabelMensaje.setText("Las ganacias de ayer fueron");
 
-        jTextField4.setEditable(false);
+        jTextFieldMontoPasado.setEditable(false);
 
-        jLabel11.setText("Producto con menos ventas");
+        jLabel13.setText("Las ganacias han aumentado");
 
-        jTextField5.setEditable(false);
+        jTextFieldPorcentajeCrecimiento.setEditable(false);
+
+        jLabel14.setText("%");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -131,28 +139,33 @@ public class VentanaFinanzasTodo extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel9))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextFieldNumeroRecargas)
-                            .addComponent(jTextField1)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 269, Short.MAX_VALUE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel1)
+                                .addComponent(jLabel9))
+                            .addGap(18, 18, 18)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jTextFieldNumeroRecargas)
+                                .addComponent(jTextFieldCompañiaMax)
+                                .addComponent(jTextFieldCompañiaMin, javax.swing.GroupLayout.DEFAULT_SIZE, 269, Short.MAX_VALUE)))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
                             .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel11))
+                            .addGap(18, 18, 18)
+                            .addComponent(jTextFieldNumeroVentas)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabelMensaje)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldMontoPasado, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldNumeroVentas)
-                            .addComponent(jTextField4)
-                            .addComponent(jTextField5))))
-                .addGap(21, 21, 21))
+                        .addComponent(jLabel13)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextFieldPorcentajeCrecimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel14)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -164,24 +177,23 @@ public class VentanaFinanzasTodo extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldCompañiaMax, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldCompañiaMin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(jTextFieldNumeroVentas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(22, 22, 22)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(32, Short.MAX_VALUE))
+                    .addComponent(jLabelMensaje)
+                    .addComponent(jTextFieldPorcentajeCrecimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel14)
+                    .addComponent(jTextFieldMontoPasado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         jLabel12.setText("Ganancias");
@@ -215,7 +227,7 @@ public class VentanaFinanzasTodo extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(181, 181, 181)
                         .addComponent(jLabel8)))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -232,12 +244,12 @@ public class VentanaFinanzasTodo extends javax.swing.JFrame {
                     .addComponent(jComboBoxPeriodoTiempo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
                     .addComponent(jTextFieldVentas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
                 .addComponent(jButtonVolverAlMenu)
                 .addContainerGap())
         );
@@ -281,6 +293,10 @@ public class VentanaFinanzasTodo extends javax.swing.JFrame {
         Logger.getLogger(VentanaFinanzasRecargas.class.getName()).log(Level.SEVERE, null, ex);
     }
     }//GEN-LAST:event_jComboBoxPeriodoTiempoActionPerformed
+
+    private void jTextFieldCompañiaMinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCompañiaMinActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldCompañiaMinActionPerformed
 
     /**
      * @param args the command line arguments
@@ -347,9 +363,9 @@ public class VentanaFinanzasTodo extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBoxDatos;
     private javax.swing.JComboBox<String> jComboBoxPeriodoTiempo;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -358,14 +374,15 @@ public class VentanaFinanzasTodo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabelMensaje;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextFieldCompañiaMax;
+    private javax.swing.JTextField jTextFieldCompañiaMin;
+    private javax.swing.JTextField jTextFieldMontoPasado;
     private javax.swing.JTextField jTextFieldNumeroRecargas;
     private javax.swing.JTextField jTextFieldNumeroVentas;
+    private javax.swing.JTextField jTextFieldPorcentajeCrecimiento;
     private javax.swing.JTextField jTextFieldVentas;
     // End of variables declaration//GEN-END:variables
 
@@ -374,9 +391,27 @@ public class VentanaFinanzasTodo extends javax.swing.JFrame {
      * @param Reporte
      */
     void llenaCampos(Reporte reporte1) {
+         String periodo;  
+      double montoP=0, montoA=0, crecimiento=0; 
        double ganancia= reporte1.getGananciaRecargas()+ reporte1.getGananciaProductos();
         jTextFieldVentas.setText(String.valueOf(ganancia));
        jTextFieldNumeroVentas.setText(String.valueOf(reporte1.getNumProductosVendidos()));    
        jTextFieldNumeroRecargas.setText(String.valueOf(reporte1.getNumRecargas()));
+       jTextFieldCompañiaMax.setText(String.valueOf(reporte1.getCompañiaMax()));
+       jTextFieldCompañiaMin.setText(String.valueOf(reporte1.getCompañiaMin()));
+        periodo= jComboBoxPeriodoTiempo.getSelectedItem().toString();   
+       if(periodo.equals("Mes")){           
+        jLabelMensaje.setText("Las ganacias del mes pasado fueron");
+       }
+       if(periodo.equals("Año")){           
+       jLabelMensaje.setText("Las ganacias del año pasado fueron");   
+       }
+       montoP=reporte1.getGanaciaPasada()+reporte1.getGananciaPasadaR();
+         montoA=ganancia;
+        jTextFieldMontoPasado.setText(String.valueOf(montoP));
+         if(montoA!=0){            
+       crecimiento= ((montoA-montoP)/montoA)*100;  
+       }   
+        jTextFieldPorcentajeCrecimiento.setText(String.valueOf(String.format("%.2f", crecimiento))); 
     }
 }
