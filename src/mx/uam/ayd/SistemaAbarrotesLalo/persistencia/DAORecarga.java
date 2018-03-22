@@ -12,7 +12,7 @@ import mx.uam.ayd.SistemaAbarrotesLalo.modelo.Recarga;
 
 /**
  *
- * @author lalo
+ * @author nallely
  */
 public class DAORecarga {
 
@@ -245,38 +245,128 @@ public class DAORecarga {
      * @throws SQLException
      */
     public int recuperaMontosPasados(String periodo) throws SQLException {
+       int diaP,mesP, añoP;
         if (periodo.equals("Dia")) {
-
-            recargas = BaseDeDatos.consulta("SELECT MONTO FROM RECARGA WHERE FECHA LIKE" + "'"+dia+"-"+mes+"-"+año+"'");
+           if(dia!=1){
+               diaP=dia-1;
+             recargas = BaseDeDatos.consulta("SELECT MONTO FROM RECARGA WHERE FECHA LIKE" + "'" + diaP + "-" + mes + "-" + año + "'");   
+           }else{
+              diaP= calculafecha("Dia");
+              mesP= calculafecha("Mes");
+              añoP= calculafecha("Año");
+               recargas= BaseDeDatos.consulta("SELECT MONTO FROM RECARGA WHERE FECHA LIKE" + "'" + diaP + "-" + mesP + "-" + añoP + "'");   
+           }            
             while (recargas.next()) {
-               suma =suma + recargas.getInt("MONTO");
+                suma = suma +  recargas.getInt("MONTO");
             }
-           montoRecargas=suma;
-           suma=0;
-
+            montoPasado = suma;
+            suma = 0;
         }
-
         if (periodo.equals("Mes")) {
-
-            recargas = BaseDeDatos.consulta("SELECT MONTO FROM RECARGA WHERE FECHA LIKE" + "'%-" + mes +"-"+año+"'");
-            while (recargas.next()) {
-                suma =suma + recargas.getInt("MONTO");
+            mesP= calculafecha("Mes");
+            if(mesP==12){
+               añoP=año-1;
+               recargas = BaseDeDatos.consulta("SELECT MONTO FROM RECARGA WHERE FECHA LIKE" + "'%-" + mesP +"-"+añoP+"'"); 
+            }else{
+               recargas = BaseDeDatos.consulta("SELECT MONTO FROM RECARGA WHERE FECHA LIKE" + "'%-" + mesP +"-"+año+"'"); 
             }
-            montoRecargas=suma;
-           suma=0;
+            
+            while ( recargas.next()) {
+                suma = suma +  recargas.getInt("MONTO");
+            }
+            montoPasado = suma;
+            suma = 0;
         }
         if (periodo.equals("Año")) {
-
-            recargas = BaseDeDatos.consulta("SELECT MONTO FROM RECARGA WHERE FECHA LIKE" + "'%-%" + año + "'");
-            while (recargas.next()) {
-                suma =suma + recargas.getInt("MONTO");
+            añoP=año-1;
+             recargas = BaseDeDatos.consulta("SELECT MONTO FROM RECARGA WHERE FECHA LIKE" + "'%-%" + añoP + "'");
+            while ( recargas.next()) {
+                suma = suma +  recargas.getInt("MONTO");
             }
-            montoRecargas=suma;
-           suma=0;
+            montoPasado = suma;
+            suma = 0;
         }
-        return montoRecargas;
+        return montoPasado;
     }
-   
+
+    /**
+     *Calcula la fecha pasada donde se ven elementos como el numero de dias del mes entre otras
+     * @param periodo
+     * @return nueva fecha
+     */
+    public int calculafecha(String periodo) {
+        int nuevaFecha=0;
+      if(periodo.equals("Dia")){
+          switch(mes){
+               case 1:
+                  //regreso los dias de diciembre
+                   nuevaFecha=31;
+                     break;
+            case 2:
+                //regreso los dias de enero
+                 nuevaFecha=31;
+                     break;
+            case 3:
+                //regreso los dias de febrero
+                 nuevaFecha=28;
+                     break;
+            case 4:
+                //regreso los dias de marzo
+                 nuevaFecha=31;
+                     break;
+            case 5: 
+                //regreso los dias de abril
+                 nuevaFecha=30;
+                     break;
+            case 6:  
+                //regreso los dias de mayo
+                 nuevaFecha=31;
+                     break;
+            case 7:
+                //regreso los dias de junio
+                 nuevaFecha=30;
+                     break;
+            case 8: 
+                //regreso los dias de julio
+                 nuevaFecha=31;
+                     break;
+            case 9: 
+                //regreso los dias de agosto
+                 nuevaFecha=31;
+                     break;
+            case 10:
+                //regreso los dias de septiembre
+                 nuevaFecha=30;
+                     break;
+            case 11: 
+                //regreso los dias de octubre
+                 nuevaFecha=31;
+                     break;
+            case 12: 
+              //regreso los dias de noviembre
+                 nuevaFecha=30;
+                    break;
+            }
+
+        }
+        if (periodo.equals("Mes")) {
+            if (mes == 1) {
+                nuevaFecha = 12;
+            } else {
+                nuevaFecha = mes - 1;
+            }
+
+        }
+        if (periodo.equals("Año")) {
+            if (mes == 1&&dia==1) {
+                nuevaFecha = año-1;
+            } else {
+                nuevaFecha = año;
+            }
+
+        }
+      return nuevaFecha; 
+    }
 }
 
 
