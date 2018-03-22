@@ -84,8 +84,8 @@ Recarga recarga1;
      */
     int dameMontoPasadoRecargas(String periodo) throws SQLException {
         montoPasado = daoRecarga1.recuperaMontosPasados(periodo);
-        // return montoPasado;
-        return 0;
+         return montoPasado;
+        
     }
 
 }

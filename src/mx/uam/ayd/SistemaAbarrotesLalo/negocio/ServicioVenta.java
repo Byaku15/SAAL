@@ -54,6 +54,16 @@ public class ServicioVenta {
        boolean estado= daoVenta1.creaVenta(venta1);
        return estado;
     }
+  /**
+     * Obtiene la suma de montos de ventas pasadas dentro de un periodo de tiempo
+     * @param periodo
+     * @return
+     * @throws SQLException
+     */
+    double dameMontoPasado(String periodo) throws SQLException {
+        montoTotal= daoVenta1.recuperaMontosPasados(periodo);    
+       return montoTotal;
+    }
     
 }
 
