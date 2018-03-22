@@ -31,8 +31,8 @@ Reporte reporte1;
       numeroDeVentas=servicioventa1.dameNumeroDeVentas(periodo);
       compañiaMax=servicioRecarga1.dameCompañiaMax(periodo);
       compañiaMin=servicioRecarga1.dameCompañiaMin(periodo);
-     // montoPasado= servicioventa1.dameMontoPasado(periodo);  
-      montoPasadoR=0; 
+      montoPasado= servicioventa1.dameMontoPasado(periodo);  
+      montoPasadoR=servicioRecarga1.dameMontoPasadoRecargas(periodo); 
       return reporte1= new Reporte( numeroDeRecargas,compañiaMax,compañiaMin,montoPasadoR,
               numeroDeVentas, montoPasado,montoTotalVenta,montoTotalRecargas);      
     }
@@ -64,6 +64,7 @@ Reporte reporte1;
     public Reporte generarReporteProductos(String periodo) throws SQLException {
        montoTotalVenta=servicioventa1.dameMontoTotalVentas(periodo);
       numeroDeVentas=servicioventa1.dameNumeroDeVentas(periodo);
+      montoPasado=servicioventa1.dameMontoPasado(periodo);
       
       return reporte1= new Reporte(montoTotalVenta,numeroDeVentas,montoPasado); 
     }
