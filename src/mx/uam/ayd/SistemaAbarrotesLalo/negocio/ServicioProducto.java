@@ -24,6 +24,7 @@ public class ServicioProducto {
     int existencia;
     Producto agregaProducto;
     Producto modificarProducto;
+    Producto eliminarProducto;
 
     /**
      *Este metodo busca los productos por nombre en la base de datos
@@ -48,7 +49,7 @@ public class ServicioProducto {
     }
 
     /**
-     *
+     *Este metodo se encarga de mostrar los productos a caducar
      * @param marcaActual
      * @return
      */
@@ -74,7 +75,7 @@ public class ServicioProducto {
     }
         
     /**
-     *
+     *Este metodo se encarga de recuperar un producto por nombre y existencias
      * @param nombreProducto
      * @param existencias
      * @return
@@ -93,7 +94,7 @@ public class ServicioProducto {
     }
     
     /**
-     *
+     *Este metodo se encarga de actualizar las existencias del producto
      * @param productos
      * @param cantidades
      * @return
@@ -105,7 +106,7 @@ public class ServicioProducto {
     }
     
     /**
-     *
+     *Este metodo se encarga de agregar un producto
      * @param id
      * @param nombre
      * @param caducidad
@@ -121,7 +122,7 @@ public class ServicioProducto {
     }
     
     /**
-     *
+     *Este Metodo recupera una lista de productos por nombre
      * @return
      * @throws SQLException
      */
@@ -132,7 +133,7 @@ public class ServicioProducto {
     }
 
     /**
-     *
+     *Este metodo se encarga de moficar los datos de un producto
      * @param id
      * @param nombre
      * @param caducidad
@@ -145,12 +146,25 @@ public class ServicioProducto {
        modificarProducto=daoProducto1.modificarProducto(id,nombre, caducidad, existencias, precio, marca);
        return modificarProducto;
     }
-      /****************************************************************************Sprint 2**********************************************************/
+      /****************************************************************************Sprint
+       * Este metodo se encarga de recuperar una lista de productos y caducidad
+     * @return 
+     * @throws java.sql.SQLException2**********************************************************/
     
     public  ArrayList  recuperaProductosYCaducidad() throws SQLException{
         ArrayList listaProductosCaducidad = new  ArrayList ();
         listaProductosCaducidad = daoProducto1.recuperaProductosYCaducidad();
         return listaProductosCaducidad;
     
+    }
+
+    /**
+     *Este metodo se encarga de eliminar un producto
+     * @param nombre
+     * @return
+     */
+    public Producto eliminaProducto(String nombre) {
+        eliminarProducto = daoProducto1.eliminarProducto(nombre);
+        return eliminarProducto;
     }
 }

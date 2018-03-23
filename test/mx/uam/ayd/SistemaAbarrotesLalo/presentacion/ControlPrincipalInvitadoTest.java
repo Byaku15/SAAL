@@ -80,7 +80,7 @@ public class ControlPrincipalInvitadoTest {
     public void testAgregarProducto() {
         System.out.println("agregarProducto");
         ControlPrincipalInvitado instance = new ControlPrincipalInvitado();
-        instance.agregarProducto();
+       // instance.agregarProducto();
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
@@ -116,7 +116,7 @@ public class ControlPrincipalInvitadoTest {
     public void testModificarProducto() throws Exception {
         System.out.println("modificarProducto");
         ControlPrincipalInvitado instance = new ControlPrincipalInvitado();
-        instance.modificarProducto();
+       // instance.modificarProducto();
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }

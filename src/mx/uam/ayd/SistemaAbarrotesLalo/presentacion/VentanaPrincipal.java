@@ -28,9 +28,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public VentanaPrincipal(ControlPrincipal controlPrincipal) {
          controlPrincipal1=controlPrincipal;
           initComponents();
+          
             /*******************************Sprint 2**************************************/
         try{
             muestraAvisoCaducados();
+            
         }catch (SQLException ex) {
             Logger.getLogger(VentanaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -50,7 +52,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jDialog1 = new javax.swing.JDialog();
         JButtonConsultar = new javax.swing.JButton();
         JButtonAgregar = new javax.swing.JButton();
-        JButtonModificar = new javax.swing.JButton();
         JButtonFinanzas = new javax.swing.JButton();
         JButtonVenta = new javax.swing.JButton();
         JButtonProveedor = new javax.swing.JButton();
@@ -58,7 +59,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         JButtonRecarga = new javax.swing.JButton();
         JButtonSalir = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jButtonCliente = new javax.swing.JButton();
         cerrarSesion = new javax.swing.JButton();
 
@@ -78,7 +78,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         setForeground(java.awt.Color.white);
         setSize(new java.awt.Dimension(724, 325));
 
-        JButtonConsultar.setIcon(new javax.swing.ImageIcon("/media/jorge/Archivos/Proyectos/netbeans/SAAL/src/Imagen/coin-of-dollar.png")); // NOI18N
+        JButtonConsultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagen/coin-of-dollar.png"))); // NOI18N
         JButtonConsultar.setText("Consulta de precios");
         JButtonConsultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,23 +86,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        JButtonAgregar.setIcon(new javax.swing.ImageIcon("/media/jorge/Archivos/Proyectos/netbeans/SAAL/src/Imagen/agregar.png")); // NOI18N
-        JButtonAgregar.setText("Agregar producto");
+        JButtonAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagen/agregar.png"))); // NOI18N
+        JButtonAgregar.setText("Lista de productos");
         JButtonAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JButtonAgregarActionPerformed(evt);
             }
         });
 
-        JButtonModificar.setIcon(new javax.swing.ImageIcon("/media/jorge/Archivos/Proyectos/netbeans/SAAL/src/Imagen/modificar.png")); // NOI18N
-        JButtonModificar.setText("Modificar datos del producto");
-        JButtonModificar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JButtonModificarActionPerformed(evt);
-            }
-        });
-
-        JButtonFinanzas.setIcon(new javax.swing.ImageIcon("/media/jorge/Archivos/Proyectos/netbeans/SAAL/src/Imagen/finanzas.png")); // NOI18N
+        JButtonFinanzas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagen/finanzas.png"))); // NOI18N
         JButtonFinanzas.setText("Finanzas");
         JButtonFinanzas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,7 +104,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         JButtonVenta.setBackground(new java.awt.Color(255, 0, 0));
         JButtonVenta.setFont(new java.awt.Font("Lucida Grande", 3, 13)); // NOI18N
-        JButtonVenta.setIcon(new javax.swing.ImageIcon("/media/jorge/Archivos/Proyectos/netbeans/SAAL/src/Imagen/venta.png")); // NOI18N
+        JButtonVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagen/venta.png"))); // NOI18N
         JButtonVenta.setText("Ventas");
         JButtonVenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -120,7 +112,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        JButtonProveedor.setIcon(new javax.swing.ImageIcon("/media/jorge/Archivos/Proyectos/netbeans/SAAL/src/Imagen/proveedor.png")); // NOI18N
+        JButtonProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagen/proveedor.png"))); // NOI18N
         JButtonProveedor.setText("Lista de proveedores");
         JButtonProveedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,7 +120,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        JButtonInventario.setIcon(new javax.swing.ImageIcon("/media/jorge/Archivos/Proyectos/netbeans/SAAL/src/Imagen/inventario.png")); // NOI18N
+        JButtonInventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagen/inventario.png"))); // NOI18N
         JButtonInventario.setText("Inventario");
         JButtonInventario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,7 +128,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        JButtonRecarga.setIcon(new javax.swing.ImageIcon("/media/jorge/Archivos/Proyectos/netbeans/SAAL/src/Imagen/smartphone-call.png")); // NOI18N
+        JButtonRecarga.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagen/smartphone-call.png"))); // NOI18N
         JButtonRecarga.setText("Recargas telefónicas");
         JButtonRecarga.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -145,7 +137,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
 
         JButtonSalir.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
-        JButtonSalir.setIcon(new javax.swing.ImageIcon("/media/jorge/Archivos/Proyectos/netbeans/SAAL/src/Imagen/cancel.png")); // NOI18N
+        JButtonSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagen/cancel.png"))); // NOI18N
         JButtonSalir.setText("Salir");
         JButtonSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -156,8 +148,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Lucida Calligraphy", 2, 30)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 102, 153));
         jLabel1.setText("S.A.A.L");
-
-        jLabel3.setIcon(new javax.swing.ImageIcon("/media/jorge/Archivos/Proyectos/netbeans/SAAL/src/Imagen/Tiendaonline.png")); // NOI18N
 
         jButtonCliente.setText("Cliente");
         jButtonCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -178,76 +168,73 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(483, 483, 483)
-                .addComponent(JButtonModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(483, 483, 483)
-                .addComponent(JButtonProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(7, 7, 7)
-                .addComponent(JButtonInventario, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(241, 241, 241)
-                .addComponent(JButtonVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(241, 241, 241)
-                .addComponent(JButtonAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(7, 7, 7)
-                .addComponent(JButtonConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(7, 7, 7)
-                .addComponent(JButtonFinanzas, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(241, 241, 241)
-                .addComponent(JButtonRecarga, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(483, 483, 483)
-                .addComponent(JButtonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButtonCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 564, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(60, 60, 60)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(cerrarSesion))))
+                        .addGap(7, 7, 7)
+                        .addComponent(JButtonInventario, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(241, 241, 241)
+                        .addComponent(JButtonRecarga, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(221, 221, 221)
+                        .addComponent(cerrarSesion))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(JButtonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGap(241, 241, 241)
+                                            .addComponent(JButtonAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGap(7, 7, 7)
+                                            .addComponent(JButtonConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGap(32, 32, 32))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addGap(7, 7, 7)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                            .addComponent(JButtonVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(32, 32, 32))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                            .addComponent(JButtonFinanzas, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(266, 266, 266)))))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(JButtonProveedor, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)
+                                .addComponent(jButtonCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                .addGap(90, 90, 90))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(186, 186, 186)
-                        .addComponent(JButtonVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(134, 134, 134)
-                        .addComponent(JButtonAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(245, 245, 245)
-                        .addComponent(JButtonRecarga, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(244, 244, 244)
-                        .addComponent(JButtonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cerrarSesion)
-                .addContainerGap(15, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(186, 186, 186)
+                                .addComponent(JButtonVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(245, 245, 245)
+                                .addComponent(JButtonRecarga, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(134, 134, 134)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(JButtonAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(JButtonProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButtonCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(22, 22, 22)
+                                .addComponent(JButtonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(51, 51, 51)
+                        .addComponent(cerrarSesion))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(30, 30, 30)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(41, 41, 41)
-                        .addComponent(JButtonModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(JButtonProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(19, 19, 19)
+                        .addGap(152, 152, 152)
                         .addComponent(JButtonInventario, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(134, 134, 134)
@@ -255,9 +242,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(186, 186, 186)
                         .addComponent(JButtonFinanzas, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         pack();
@@ -285,8 +270,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_JButtonInventarioActionPerformed
 
     private void JButtonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JButtonAgregarActionPerformed
-         dispose();
-        controlPrincipal1.agregarProducto();
+        dispose();
+       controlPrincipal1.realizaProducto();
               
     }//GEN-LAST:event_JButtonAgregarActionPerformed
  
@@ -299,15 +284,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
        dispose();         
        controlPrincipal1.realizarRecarga();
     }//GEN-LAST:event_JButtonRecargaActionPerformed
-
-    private void JButtonModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JButtonModificarActionPerformed
-        dispose();          
-        try {
-            controlPrincipal1.modificarProducto();
-        } catch (SQLException ex) {
-            Logger.getLogger(VentanaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_JButtonModificarActionPerformed
 
     private void JButtonProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JButtonProveedorActionPerformed
        dispose();      
@@ -381,7 +357,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton JButtonConsultar;
     private javax.swing.JButton JButtonFinanzas;
     private javax.swing.JButton JButtonInventario;
-    private javax.swing.JButton JButtonModificar;
     private javax.swing.JButton JButtonProveedor;
     private javax.swing.JButton JButtonRecarga;
     private javax.swing.JButton JButtonSalir;
@@ -390,13 +365,21 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jButtonCliente;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 
     
     /*****************************************Sprint 2**********************************************/
     private void muestraAvisoCaducados() throws SQLException{
+        int contador;
+        int contador2;
+        contador = 0+1;
+        contador2 = contador + 1;
+        
+        System.out.println("El contador es: "+contador);
+        if (contador2 == 2 ){
         JOptionPane.showMessageDialog(null, controlPrincipal1.recuperaProductosYCaducidad(),"ALertas de caducidad", HEIGHT);
+        }
+        contador ++;
     }
     
 }

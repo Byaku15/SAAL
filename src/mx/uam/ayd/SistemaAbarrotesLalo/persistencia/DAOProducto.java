@@ -157,7 +157,10 @@ public class DAOProducto {
         return null;    
     }
     
-        /**********************************************************************Sprint 2********************************************************************/
+        /**********************************************************************Sprint
+         * Recupera una lista de nombre y caducidad
+     * @return 2*
+     * @throws java.sql.SQLException*******************************************************************/
     public ArrayList<String> recuperaProductosYCaducidad() throws SQLException {
         ArrayList<String> lista = new ArrayList<String>();
         String cadena; 
@@ -177,5 +180,16 @@ public class DAOProducto {
             System.out.println(asd);
         }  
         return lista;
+    }
+
+    /**
+     *Elimina un producto
+     * @param nombre
+     * @return
+     */
+    public Producto eliminarProducto(String nombre) {
+        BaseDeDatos.getConexion();
+        ResultSet producto = BaseDeDatos.elimina(nombre);
+        return null;
     }
 }

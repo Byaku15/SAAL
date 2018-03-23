@@ -249,4 +249,25 @@ public class conexion {
         }
         return null;  
     }
+
+    ResultSet elimina(String nombre) {
+        ResultSet rs=null;
+        try{
+            stmt = con.prepareStatement("DELETE FROM PRODUCTO "
+                    + "WHERE NOMBRE =?");
+            stmt.setString(1,nombre);
+        
+            int retorno = stmt.executeUpdate();
+            if(retorno>0)
+            {
+                JOptionPane.showMessageDialog(null,"Tu producto ha sido eliminado");  
+                System.out.println("Eliminado correctamente");
+            }
+        
+            }catch(Exception ex){
+                JOptionPane.showMessageDialog(null,"Error"+ex.getMessage());
+            }
+        return null;
+    }
+    
 }

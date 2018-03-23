@@ -62,12 +62,10 @@ public class ControlPrincipal {
        controlInventario1.iniciaControlInventario();
     }
 
-    /**
-     * Este metodo inicializa el caso de uso Agregar Producto
-     */
-    public void agregarProducto() {
-        controlProducto1 = new ControlProducto();
-        controlProducto1.iniciaControlAgregarProducto();
+    
+    public void realizaProducto(){
+        controlProducto1=new ControlProducto();
+        controlProducto1.iniciaControlProducto();
     }
 
     /**
@@ -84,15 +82,6 @@ public class ControlPrincipal {
     public void realizarRecarga() {
         controlRecargas1=new ControlRecargas();
         controlRecargas1.iniciaControlRecargas();
-    }
-
-    /**
-     * Este metodo inicializa el caso de uso modificar producto
-     * @throws java.sql.SQLException
-     */
-    public void modificarProducto() throws SQLException {
-       controlProducto1=new ControlProducto();
-       controlProducto1.iniciaControlModificarProducto();
     }
 
     /**

@@ -216,7 +216,7 @@ Producto agregarProducto;
     }//GEN-LAST:event_jButtonAgregarActionPerformed
     private void jButtonVolverAlMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverAlMenuActionPerformed
         dispose();
-        controlProducto1.finalizaControl();
+        controlProducto1.iniciaControlProducto();
     }//GEN-LAST:event_jButtonVolverAlMenuActionPerformed
 
            

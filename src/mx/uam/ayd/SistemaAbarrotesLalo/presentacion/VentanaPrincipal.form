@@ -48,58 +48,62 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace min="60" pref="60" max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" pref="210" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" attributes="0">
-              <EmptySpace min="483" pref="483" max="-2" attributes="0"/>
-              <Component id="JButtonModificar" min="-2" pref="243" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" attributes="0">
-              <EmptySpace min="483" pref="483" max="-2" attributes="0"/>
-              <Component id="JButtonProveedor" min="-2" pref="242" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" attributes="0">
-              <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
-              <Component id="JButtonInventario" min="-2" pref="207" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" attributes="0">
-              <EmptySpace min="241" pref="241" max="-2" attributes="0"/>
-              <Component id="JButtonVenta" min="-2" pref="207" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" attributes="0">
-              <EmptySpace min="241" pref="241" max="-2" attributes="0"/>
-              <Component id="JButtonAgregar" min="-2" pref="207" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" attributes="0">
-              <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
-              <Component id="JButtonConsultar" min="-2" pref="207" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" attributes="0">
-              <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
-              <Component id="JButtonFinanzas" min="-2" pref="207" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" attributes="0">
-              <EmptySpace min="241" pref="241" max="-2" attributes="0"/>
-              <Component id="JButtonRecarga" min="-2" pref="207" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" attributes="0">
-              <EmptySpace min="483" pref="483" max="-2" attributes="0"/>
-              <Component id="JButtonSalir" min="-2" pref="239" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jButtonCliente" min="-2" pref="193" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                      <Component id="jLabel3" min="-2" pref="564" max="-2" attributes="0"/>
+                      <EmptySpace min="60" pref="60" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" pref="210" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
+                      <Component id="JButtonInventario" min="-2" pref="207" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="241" pref="241" max="-2" attributes="0"/>
+                      <Component id="JButtonRecarga" min="-2" pref="207" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="221" max="-2" attributes="0"/>
                       <Component id="cerrarSesion" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                      <Component id="JButtonSalir" min="-2" pref="239" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="241" pref="241" max="-2" attributes="0"/>
+                                          <Component id="JButtonAgregar" min="-2" pref="207" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
+                                          <Component id="JButtonConsultar" min="-2" pref="207" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="JButtonVenta" min="-2" pref="207" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="JButtonFinanzas" min="-2" pref="207" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="266" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="JButtonProveedor" pref="242" max="32767" attributes="0"/>
+                              <Component id="jButtonCliente" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
               </Group>
+              <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -108,37 +112,34 @@
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="186" pref="186" max="-2" attributes="0"/>
-                      <Component id="JButtonVenta" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="186" pref="186" max="-2" attributes="0"/>
+                              <Component id="JButtonVenta" min="-2" pref="40" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="245" pref="245" max="-2" attributes="0"/>
+                              <Component id="JButtonRecarga" min="-2" pref="40" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="134" pref="134" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="JButtonAgregar" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                                  <Component id="JButtonProveedor" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jButtonCliente" min="-2" pref="37" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                              <Component id="JButtonSalir" min="-2" pref="40" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                      <Component id="cerrarSesion" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="134" pref="134" max="-2" attributes="0"/>
-                      <Component id="JButtonAgregar" min="-2" pref="40" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="245" pref="245" max="-2" attributes="0"/>
-                      <Component id="JButtonRecarga" min="-2" pref="40" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="244" pref="244" max="-2" attributes="0"/>
-                      <Component id="JButtonSalir" min="-2" pref="40" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="jLabel3" min="-2" pref="330" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="cerrarSesion" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="15" max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" pref="63" max="-2" attributes="0"/>
-                      <EmptySpace min="41" pref="41" max="-2" attributes="0"/>
-                      <Component id="JButtonModificar" min="-2" pref="40" max="-2" attributes="0"/>
-                      <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
-                      <Component id="JButtonProveedor" min="-2" pref="40" max="-2" attributes="0"/>
-                      <EmptySpace min="19" pref="19" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="152" max="-2" attributes="0"/>
                       <Component id="JButtonInventario" min="-2" pref="40" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -150,9 +151,7 @@
                       <Component id="JButtonFinanzas" min="-2" pref="40" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="jButtonCliente" min="-2" pref="37" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+              <EmptySpace pref="15" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -160,6 +159,9 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="JButtonConsultar">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Imagen/coin-of-dollar.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Consulta de precios"/>
       </Properties>
       <Events>
@@ -168,22 +170,20 @@
     </Component>
     <Component class="javax.swing.JButton" name="JButtonAgregar">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Agregar producto"/>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Imagen/agregar.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Lista de productos"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JButtonAgregarActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="JButtonModificar">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Modificar datos del producto"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JButtonModificarActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JButton" name="JButtonFinanzas">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Imagen/finanzas.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Finanzas"/>
       </Properties>
       <Events>
@@ -198,6 +198,9 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Lucida Grande" size="13" style="3"/>
         </Property>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Imagen/venta.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Ventas"/>
       </Properties>
       <Events>
@@ -206,6 +209,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="JButtonProveedor">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Imagen/proveedor.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Lista de proveedores"/>
       </Properties>
       <Events>
@@ -214,6 +220,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="JButtonInventario">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Imagen/inventario.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Inventario"/>
       </Properties>
       <Events>
@@ -222,6 +231,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="JButtonRecarga">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Imagen/smartphone-call.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Recargas telef&#xf3;nicas"/>
       </Properties>
       <Events>
@@ -232,6 +244,9 @@
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Lucida Grande" size="14" style="1"/>
+        </Property>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Imagen/cancel.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Salir"/>
       </Properties>
@@ -249,8 +264,6 @@
         </Property>
         <Property name="text" type="java.lang.String" value="S.A.A.L"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel3">
     </Component>
     <Component class="javax.swing.JButton" name="jButtonCliente">
       <Properties>

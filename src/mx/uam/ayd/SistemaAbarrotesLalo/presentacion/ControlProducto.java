@@ -8,7 +8,7 @@ import mx.uam.ayd.SistemaAbarrotesLalo.modelo.Producto;
 import mx.uam.ayd.SistemaAbarrotesLalo.negocio.ServicioProducto;
 
 /**
- *
+ *Este clase se encarga todo lo relacionado con el producto
  * @author lalo
  */
 public class ControlProducto {
@@ -16,9 +16,19 @@ public class ControlProducto {
     double precioProducto;
     Producto agregaProducto;
     Producto modificarProducto;
+    Producto eliminarProducto;
  
     /**
-     *
+     *Inicia el menu principal de producto
+     */
+    
+    public void iniciaControlProducto() {
+        VentanaProductos ventanaProductos = new VentanaProductos(this);
+        ventanaProductos.setVisible(true);
+    }
+    
+    /**
+     *Este metodo abre la ventana agregar producto
      */
     public void iniciaControlAgregarProducto() {
         VentanaAgregarProducto ventanaAgregarProducto = new VentanaAgregarProducto(this);
@@ -26,7 +36,7 @@ public class ControlProducto {
     }
 
     /**
-     *
+     *Este metodo abre la ventana modificar producto con una lista de nombres
      * @throws SQLException
      */
     public  void iniciaControlModificarProducto() throws SQLException {
@@ -36,16 +46,25 @@ public class ControlProducto {
     }
 
     /**
-     *
+     *Este metodo inicia la ventana de consultar precio
      */
     public void iniciaControlConsultarProducto() {
        VentanaConsultaDePrecios ventanaConsultaPrecio= new VentanaConsultaDePrecios(this);
         ventanaConsultaPrecio.setVisible(true);
         
     }
-
+    
     /**
-     *
+     * Este metodo inicia la ventana de eliminar producto con una lista de nombres
+     * @throws SQLException
+     */
+    public void iniciaControlEliminarProducto() throws SQLException {
+        VentanaEliminarProducto ventanaEliminarProducto = new VentanaEliminarProducto(this);
+        ventanaEliminarProducto.cargaComboBox();
+        ventanaEliminarProducto.setVisible(true);
+    }
+    /**
+     *Este metodo termina el menu de producto
      */
     public void finalizaControl() {
         ControlPrincipal controlPrincipal1 = new ControlPrincipal();
@@ -53,7 +72,7 @@ public class ControlProducto {
     }
 
     /**
-     *
+     *Este metodo inicia la ventana modificar datos
      */
     public void modificarDatosProducto(){
        VentanaModificarDatosProducto ventanaModificarDatosProducto= new VentanaModificarDatosProducto(this);
@@ -61,7 +80,7 @@ public class ControlProducto {
    } 
 
     /**
-     *
+     *Este metodo agrega un producto
      * @param id
      * @param nombre
      * @param caducidad
@@ -76,7 +95,7 @@ public class ControlProducto {
        return agregaProducto;
     }
     /**
-     *
+     *Este metodo busca un producto por nombre
      * @param nombreProducto
      * @return 
      * @throws SQLException
@@ -87,7 +106,7 @@ public class ControlProducto {
     }
 
     /**
-     *
+     *Este metodo regresa una lista de los productos
      * @return
      * @throws SQLException
      */
@@ -103,16 +122,41 @@ public class ControlProducto {
        ventanaModificarDatosProducto.setVisible(true);
        return nombre;
     }
-
+    
+     /**
+     *Este metodo modifica un producto
+     * @param id
+     * @param nombre
+     * @param caducidad
+     * @param existencias
+     * @param precio
+     * @param marca
+     * @return
+     * @throws SQLException
+     */
     Producto modificarProducto(String id, String nombre, String caducidad, String existencias, String precio, String marca) {
        modificarProducto= servicioProducto1.modificarProducto(id, nombre, caducidad, existencias, precio, marca);
        return modificarProducto;
     }
-    /*******************************Sprint 2**************************************/
+    /*******************************Sprint
+     *Este metodo regresa una lista con nombre y caducidad
+     * @return 2*
+     * @throws java.sql.SQLException*************************************/
     
     public ArrayList recuperaProductosYCaducidad() throws SQLException{
         ArrayList listaProductosCaducidad = new ArrayList();
         listaProductosCaducidad = servicioProducto1.recuperaProductosYCaducidad();
         return listaProductosCaducidad;
+    }   
+    /**
+     *Este metodo elimina un producto
+     * @param nombre
+     * */
+    Producto iniciaControlEliminar(String nombre) {
+       //System.out.println("EL producto es: "+nombre);
+       eliminarProducto=servicioProducto1.eliminaProducto(nombre);
+       return eliminarProducto;
     }
+
+   
 }

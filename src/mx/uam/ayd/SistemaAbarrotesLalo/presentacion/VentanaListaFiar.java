@@ -127,7 +127,11 @@ public class VentanaListaFiar extends javax.swing.JFrame {
 
     private void jButtonVerListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerListaActionPerformed
        dispose();
-       controlCliente1.iniciaTablaFiar();
+        try {
+            controlCliente1.iniciaTablaFiar();
+        } catch (SQLException ex) {
+            Logger.getLogger(VentanaListaFiar.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButtonVerListaActionPerformed
 
     private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed

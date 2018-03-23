@@ -58,7 +58,7 @@ listener listener1= new listener();
             }
         });
 
-        jButtonVolverAlMenu.setText("Volver al menú");
+        jButtonVolverAlMenu.setText("Volver");
         jButtonVolverAlMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonVolverAlMenuActionPerformed(evt);
@@ -84,8 +84,8 @@ listener listener1= new listener();
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(jButtonVolverAlMenu)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButtonVolverAlMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButtonAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jComboBoxMarca, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -123,7 +123,7 @@ listener listener1= new listener();
 
     private void jButtonVolverAlMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverAlMenuActionPerformed
         dispose();
-        controlProducto1.finalizaControl();
+        controlProducto1.iniciaControlProducto();
     }//GEN-LAST:event_jButtonVolverAlMenuActionPerformed
 
     private void jComboBoxMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxMarcaActionPerformed
