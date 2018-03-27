@@ -192,4 +192,20 @@ public class DAOProducto {
         ResultSet producto = BaseDeDatos.elimina(nombre);
         return null;
     }
+
+    public ArrayList recuperaProductosYCantidad() {
+        ArrayList<String> lista=new ArrayList<String>();
+        BaseDeDatos.getConexion();
+        ResultSet rs=BaseDeDatos.consulta("SELECT NOMBRE FROM PRODUCTO WHERE EXISTENCIAS LIKE '0%'");
+        try {
+        while (rs.next()) {
+        lista.add(rs.getString("NOMBRE"));    
+           }
+       }catch (Exception asd) {
+            System.out.println(asd);
+        }  
+       return lista;
+       //ResultSet rs1 = BaseDeDatos.consulta("SELECT NOMBRE FROM PRODUCTO WHERE EXISTENCIAS = 0;");
+        
+    }
 }

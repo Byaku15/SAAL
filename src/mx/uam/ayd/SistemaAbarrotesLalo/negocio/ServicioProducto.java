@@ -167,4 +167,10 @@ public class ServicioProducto {
         eliminarProducto = daoProducto1.eliminarProducto(nombre);
         return eliminarProducto;
     }
+
+    public ArrayList recuperaProductosYCantidad() {
+        ArrayList listaProductosCantidad = new  ArrayList ();
+        listaProductosCantidad = daoProducto1.recuperaProductosYCantidad();
+        return listaProductosCantidad;   
+    }
 }

@@ -66,6 +66,12 @@ public class ControlProducto {
     /**
      *Este metodo termina el menu de producto
      */
+    public void iniciaControlProductoAgotado() throws SQLException {
+        VentanaProductosAgotados ventanaProductosAgotados =new VentanaProductosAgotados (this);
+        ventanaProductosAgotados.cargaComboBox2();
+        ventanaProductosAgotados.setVisible(true);
+    }
+    
     public void finalizaControl() {
         ControlPrincipal controlPrincipal1 = new ControlPrincipal();
         controlPrincipal1.iniciaControl();
@@ -157,6 +163,12 @@ public class ControlProducto {
        eliminarProducto=servicioProducto1.eliminaProducto(nombre);
        return eliminarProducto;
     }
+    
+    public ArrayList llenaComboBox2() {
+        ArrayList listaProductosCantidad = new ArrayList();
+        listaProductosCantidad = servicioProducto1.recuperaProductosYCantidad();
+        return listaProductosCantidad;
+    }
 
-   
+    
 }
