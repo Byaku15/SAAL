@@ -10,6 +10,7 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import mx.uam.ayd.SistemaAbarrotesLalo.modelo.Cliente;
+import mx.uam.ayd.SistemaAbarrotesLalo.modelo.Producto;
 import mx.uam.ayd.SistemaAbarrotesLalo.negocio.ServicioCliente;
 
 /**
@@ -55,7 +56,7 @@ public class ControlCliente {
      *Con este metodo se obtienen los datos de los clientes que deben asi como 
      *la cantidad total de su deuda y la ultima fecha en la que pagaron
      */
-    public void iniciaTablaFiar() throws SQLException {
+      public void iniciaTablaFiar() throws SQLException {
            Cliente cliente;
            clientes.clear();
            for(Cliente c:servicioCliente1.recuperaClientes()){

@@ -196,7 +196,7 @@ public class DAOProducto {
     public ArrayList recuperaProductosYCantidad() {
         ArrayList<String> lista=new ArrayList<String>();
         BaseDeDatos.getConexion();
-        ResultSet rs=BaseDeDatos.consulta("SELECT NOMBRE FROM PRODUCTO WHERE EXISTENCIAS LIKE '0%'");
+        ResultSet rs=BaseDeDatos.consulta("SELECT NOMBRE FROM PRODUCTO WHERE EXISTENCIAS  = 0" );
         try {
         while (rs.next()) {
         lista.add(rs.getString("NOMBRE"));    
