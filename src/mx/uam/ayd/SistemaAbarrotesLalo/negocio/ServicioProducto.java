@@ -173,4 +173,8 @@ public class ServicioProducto {
         listaProductosCantidad = daoProducto1.recuperaProductosYCantidad();
         return listaProductosCantidad;   
     }
+
+    public Iterable<Producto> recuperaProdcutos() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
