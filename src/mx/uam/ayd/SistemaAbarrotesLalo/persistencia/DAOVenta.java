@@ -24,6 +24,7 @@ public class DAOVenta {
     int año = fechaActual.getYear();
     int contador;    
     
+    
     /**
      * Recupera los montos de ventas contenidas dentro de un periodo de tiempo
      * @param periodo
@@ -67,6 +68,7 @@ public class DAOVenta {
      * @throws SQLException
      */
     public int recuperaTamaño(String periodo) throws SQLException {
+        BaseDeDatos.getConexion();
         if (periodo.equals("Dia")) {
             ventas = BaseDeDatos.consulta("SELECT MONTO FROM VENTA WHERE FECHA LIKE" + "'" + dia + "-" + mes + "-" + año + "'");
             while (ventas.next()) {
@@ -106,14 +108,22 @@ public class DAOVenta {
      */
     public boolean creaVenta(Venta venta1) throws SQLException {
         Statement statement = BaseDeDatos.getConexion().createStatement();
-        int id = 3;
-        id = id++;
+        int id=1+tamaño();
         int dia= venta1.getFecha().getDayOfMonth();
         int mes= venta1.getFecha().getMonthValue();
         int año=venta1.getFecha().getYear();
          statement.execute("INSERT INTO VENTA (IDVENTA, MONTO, FECHA) \n"
                 + "VALUES (" + id + "," + venta1.getMonto() + "," + "'"+dia+"-"+mes+"-"+año+"')");
         return true;
+    }
+    
+    public int tamaño() throws SQLException{
+        BaseDeDatos.getConexion();
+            ventas = BaseDeDatos.consulta("SELECT MONTO FROM VENTA");
+            while (ventas.next()) {
+                contador++;
+            }
+             return contador;
     }
 
     /**
@@ -124,6 +134,7 @@ public class DAOVenta {
      */
     public double recuperaMontosPasados(String periodo) throws SQLException {
         int diaP,mesP, añoP, caso;
+        BaseDeDatos.getConexion();
         if (periodo.equals("Dia")) {
            if(dia!=1){
                diaP=dia-1;
