@@ -42,12 +42,14 @@ public class ServicioClienteTest {
 
     /**
      * Prueva de la clase AgregarCliente de la clase servicioCliente
+     * precondiciones:no importan
+     * salida esperada: true
      * Test of agregarCliente method, of class ServicioCliente.
      */
     @Test
     public void testAgregarCliente() throws Exception {
         System.out.println("test del metodo agregarCliente");
-        String nombre = "jorge";
+        String nombre = "jorge2222";
         double cantidad = 4.0;
         String fecha = "2018/03/02";
         ServicioCliente instance = new ServicioCliente();
@@ -58,15 +60,18 @@ public class ServicioClienteTest {
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
         }
+        
     }
     /**
      * Prueva de la clase AgregarCLiente se la clase ServicioCLiente
+     * precondiciones: no importan
+     * salida esperada:true
      * @throws Exception 
      */
      @Test
     public void testAgregarCliente2() throws Exception {
         System.out.println("test del metodo aceptacion de enteros");
-        String nombre = "carlos";
+        String nombre = "carlos333";
         double cantidad = 5;
         String fecha = "2018/03/02";
         ServicioCliente instance = new ServicioCliente();
@@ -81,6 +86,8 @@ public class ServicioClienteTest {
 
     /**
      * Prueva RecuperaCliente de la clase servicioCliente
+     * precondiciones: hay al menos un cliente en la lista de fiar
+     * salida esperada:Arraylist<Cliente> no vacio
      * Test of recuperaClientes method, of class ServicioCliente.
      */
     @Test
@@ -90,8 +97,29 @@ public class ServicioClienteTest {
         ArrayList<Cliente> expResult = null;
         ArrayList<Cliente> result = instance.recuperaClientes();
         if(result ==null){
+              fail("The test case is a prototype.");
+        }
+    }
+
+    /**
+     * Test of actualizaCliente method, of class ServicioCliente.
+     */
+    @Test
+    public void testActualizaCliente() {
+        System.out.println("actualizaCliente");
+        String nombreAntiguo = "jorge2222";
+        String nombreNuevo = "jorge444";
+        Double cantidad = 0.0;
+        String fecha = "2018/03/02";
+        ServicioCliente instance = new ServicioCliente();
+        boolean expResult = true;
+        boolean result = instance.actualizaCliente(nombreAntiguo, nombreNuevo, cantidad, fecha);
+        assertEquals(expResult, result);
+        if(expResult!=result){
+        // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
         }
     }
     
 }
+
