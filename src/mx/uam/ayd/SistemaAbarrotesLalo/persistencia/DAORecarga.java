@@ -75,6 +75,7 @@ public class DAORecarga {
      * @throws SQLException
      */
     public int recuperaTamaño(String periodo) throws SQLException {
+         BaseDeDatos.getConexion();
         if (periodo.equals("Dia")) {
             recargas = BaseDeDatos.consulta("SELECT MONTO FROM RECARGA WHERE FECHA LIKE" + "'" + dia + "-" + mes + "-" + año + "'");
             while (recargas.next()) {
@@ -111,7 +112,7 @@ public class DAORecarga {
      * @throws SQLException
      */
     public boolean AgregaRecarga(Recarga recarga1) throws SQLException {
-       Statement statement = BaseDeDatos.getConexion().createStatement();
+          Statement statement = BaseDeDatos.getConexion().createStatement();
         Random al= new Random();
         int id = al.nextInt(1000);
         int dia= recarga1.getFechaActual().getDayOfMonth();
@@ -130,6 +131,7 @@ public class DAORecarga {
      * @throws SQLException
      */
     public String recuperaCompañiaMin(String periodo) throws SQLException {
+         BaseDeDatos.getConexion();
         ArrayList<String> compañias = new ArrayList<String>();
         ArrayList<String> consulta = new ArrayList<String>();
         String compañia;
@@ -188,6 +190,7 @@ public class DAORecarga {
      * @throws SQLException
      */
     public String recuperaCompañiaMax(String periodo) throws SQLException {
+         BaseDeDatos.getConexion();
         ArrayList<String> compañias = new ArrayList<String>();
         ArrayList<String> consulta = new ArrayList<String>();
         String compañia;
@@ -245,6 +248,7 @@ public class DAORecarga {
      * @throws SQLException
      */
     public int recuperaMontosPasados(String periodo) throws SQLException {
+         BaseDeDatos.getConexion();
        int diaP,mesP, añoP;
         if (periodo.equals("Dia")) {
            if(dia!=1){
