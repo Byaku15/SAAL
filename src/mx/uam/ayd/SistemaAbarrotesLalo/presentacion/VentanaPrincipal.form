@@ -160,7 +160,7 @@
     <Component class="javax.swing.JButton" name="JButtonConsultar">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Imagen/coin-of-dollar.png"/>
+          <Image iconType="2" name="/media/jorge/Archivos/Proyectos/SAAL/src/Imagen/coin-of-dollar.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Consulta de precios"/>
       </Properties>
@@ -171,7 +171,7 @@
     <Component class="javax.swing.JButton" name="JButtonAgregar">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Imagen/agregar.png"/>
+          <Image iconType="2" name="/media/jorge/Archivos/Proyectos/SAAL/src/Imagen/agregar.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Lista de productos"/>
       </Properties>
@@ -182,7 +182,7 @@
     <Component class="javax.swing.JButton" name="JButtonFinanzas">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Imagen/finanzas.png"/>
+          <Image iconType="2" name="/media/jorge/Archivos/Proyectos/SAAL/src/Imagen/finanzas.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Finanzas"/>
       </Properties>
@@ -199,7 +199,7 @@
           <Font name="Lucida Grande" size="13" style="3"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Imagen/venta.png"/>
+          <Image iconType="2" name="/media/jorge/Archivos/Proyectos/SAAL/src/Imagen/venta.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ventas"/>
       </Properties>
@@ -210,7 +210,7 @@
     <Component class="javax.swing.JButton" name="JButtonProveedor">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Imagen/proveedor.png"/>
+          <Image iconType="2" name="/media/jorge/Archivos/Proyectos/SAAL/src/Imagen/proveedor.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Lista de proveedores"/>
       </Properties>
@@ -221,7 +221,7 @@
     <Component class="javax.swing.JButton" name="JButtonInventario">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Imagen/inventario.png"/>
+          <Image iconType="2" name="/media/jorge/Archivos/Proyectos/SAAL/src/Imagen/inventario.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Inventario"/>
       </Properties>
@@ -232,7 +232,7 @@
     <Component class="javax.swing.JButton" name="JButtonRecarga">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Imagen/smartphone-call.png"/>
+          <Image iconType="2" name="/media/jorge/Archivos/Proyectos/SAAL/src/Imagen/smartphone-call.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Recargas telef&#xf3;nicas"/>
       </Properties>
@@ -246,7 +246,7 @@
           <Font name="Lucida Grande" size="14" style="1"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Imagen/cancel.png"/>
+          <Image iconType="2" name="/media/jorge/Archivos/Proyectos/SAAL/src/Imagen/cancel.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Salir"/>
       </Properties>

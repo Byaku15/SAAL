@@ -37,8 +37,9 @@ public class VentanaProductosAgotados extends javax.swing.JFrame {
     private void initComponents() {
 
         Volver = new javax.swing.JButton();
-        jComboBoxProduct = new javax.swing.JComboBox<>();
-        jTextField1 = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTableProductoAgotado = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,50 +50,69 @@ public class VentanaProductosAgotados extends javax.swing.JFrame {
             }
         });
 
-        jComboBoxProduct.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxProductActionPerformed(evt);
+        jTableProductoAgotado.setBackground(new java.awt.Color(152, 151, 170));
+        jTableProductoAgotado.setBorder(new javax.swing.border.MatteBorder(null));
+        jTableProductoAgotado.setFont(new java.awt.Font("Ubuntu", 1, 17)); // NOI18N
+        jTableProductoAgotado.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null},
+                {null},
+                {null},
+                {null},
+                {null},
+                {null},
+                {null},
+                {null},
+                {null},
+                {null},
+                {null},
+                {null}
+            },
+            new String [] {
+                "Producto"
             }
-        });
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class
+            };
 
-        jTextField1.setEditable(false);
-        jTextField1.setBackground(new java.awt.Color(240, 240, 240));
-        jTextField1.setFont(new java.awt.Font("Lucida Calligraphy", 3, 30)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(0, 102, 153));
-        jTextField1.setText("Productos Agotados");
-        jTextField1.setBorder(null);
-        jTextField1.setSelectedTextColor(new java.awt.Color(240, 240, 240));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
             }
         });
+        jScrollPane1.setViewportView(jTableProductoAgotado);
+
+        jLabel1.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jLabel1.setText("Productos Agotados");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(102, 102, 102)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Volver)
-                    .addComponent(jComboBoxProduct, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField1))
-                .addContainerGap(109, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(57, 57, 57)
+                        .addComponent(Volver, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(168, 168, 168))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(12, 12, 12)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel1)))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                .addComponent(jComboBoxProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addComponent(Volver)
-                .addGap(35, 35, 35))
+                .addGap(33, 33, 33)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(Volver, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(32, Short.MAX_VALUE))
         );
-
-        jTextField1.getAccessibleContext().setAccessibleDescription("Productos Agotados");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -102,24 +122,16 @@ public class VentanaProductosAgotados extends javax.swing.JFrame {
         controlProducto1.iniciaControlProducto();        // TODO add your handling code here:
     }//GEN-LAST:event_VolverActionPerformed
 
-    private void jComboBoxProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxProductActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxProductActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    /*public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        try {
+       /* try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
@@ -143,21 +155,47 @@ public class VentanaProductosAgotados extends javax.swing.JFrame {
                 new VentanaProductosAgotados().setVisible(true);
             }
     
-        });*/
-    }
-    public void cargaComboBox2 () throws SQLException{
+        });
+    }*/
+    /*public void cargaComboBox2 () throws SQLException{
         ArrayList<String> listaProductosCantidad=new ArrayList<String>();
         listaProductosCantidad=controlProducto1.llenaComboBox2();
         for(int j=0;j<listaProductosCantidad.size();j++){
             jComboBoxProduct.addItem(listaProductosCantidad.get(j));
             System.out.println("El producto es: " +listaProductosCantidad);
         }
+    }*/
+    
+    public void cargaTabla () throws SQLException{
+        ArrayList<String> listaProductos=new ArrayList<String>();
+        listaProductos=controlProducto1.llenaTabla();
+            try{
+            DefaultTableModel dt=new DefaultTableModel();
+            dt.addColumn("Producto");
+            for(String s:listaProductos){     
+                Object[] fila=new Object[1];
+                fila[0]=s;
+                dt.addRow(fila);
+            }
+            if(dt.getRowCount()<11){
+                Object[] fila=new Object[1];
+                int numeroDeFilas=(11-dt.getRowCount());
+                for(int i=0;i<numeroDeFilas;i++){
+                    dt.addRow(fila);
+                }
+            }
+            this.jTableProductoAgotado.setModel(dt);
+        }catch(Exception ex){
+            
         }
+     
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Volver;
-    private javax.swing.JComboBox<String> jComboBoxProduct;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTableProductoAgotado;
     // End of variables declaration//GEN-END:variables
 
 }

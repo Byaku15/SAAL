@@ -78,7 +78,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         setForeground(java.awt.Color.white);
         setSize(new java.awt.Dimension(724, 325));
 
-        JButtonConsultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagen/coin-of-dollar.png"))); // NOI18N
+        JButtonConsultar.setIcon(new javax.swing.ImageIcon("/media/jorge/Archivos/Proyectos/SAAL/src/Imagen/coin-of-dollar.png")); // NOI18N
         JButtonConsultar.setText("Consulta de precios");
         JButtonConsultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,7 +86,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        JButtonAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagen/agregar.png"))); // NOI18N
+        JButtonAgregar.setIcon(new javax.swing.ImageIcon("/media/jorge/Archivos/Proyectos/SAAL/src/Imagen/agregar.png")); // NOI18N
         JButtonAgregar.setText("Lista de productos");
         JButtonAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,7 +94,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        JButtonFinanzas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagen/finanzas.png"))); // NOI18N
+        JButtonFinanzas.setIcon(new javax.swing.ImageIcon("/media/jorge/Archivos/Proyectos/SAAL/src/Imagen/finanzas.png")); // NOI18N
         JButtonFinanzas.setText("Finanzas");
         JButtonFinanzas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -104,7 +104,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         JButtonVenta.setBackground(new java.awt.Color(255, 0, 0));
         JButtonVenta.setFont(new java.awt.Font("Lucida Grande", 3, 13)); // NOI18N
-        JButtonVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagen/venta.png"))); // NOI18N
+        JButtonVenta.setIcon(new javax.swing.ImageIcon("/media/jorge/Archivos/Proyectos/SAAL/src/Imagen/venta.png")); // NOI18N
         JButtonVenta.setText("Ventas");
         JButtonVenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,7 +112,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        JButtonProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagen/proveedor.png"))); // NOI18N
+        JButtonProveedor.setIcon(new javax.swing.ImageIcon("/media/jorge/Archivos/Proyectos/SAAL/src/Imagen/proveedor.png")); // NOI18N
         JButtonProveedor.setText("Lista de proveedores");
         JButtonProveedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -120,7 +120,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        JButtonInventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagen/inventario.png"))); // NOI18N
+        JButtonInventario.setIcon(new javax.swing.ImageIcon("/media/jorge/Archivos/Proyectos/SAAL/src/Imagen/inventario.png")); // NOI18N
         JButtonInventario.setText("Inventario");
         JButtonInventario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,7 +128,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        JButtonRecarga.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagen/smartphone-call.png"))); // NOI18N
+        JButtonRecarga.setIcon(new javax.swing.ImageIcon("/media/jorge/Archivos/Proyectos/SAAL/src/Imagen/smartphone-call.png")); // NOI18N
         JButtonRecarga.setText("Recargas telefónicas");
         JButtonRecarga.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -137,7 +137,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
 
         JButtonSalir.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
-        JButtonSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagen/cancel.png"))); // NOI18N
+        JButtonSalir.setIcon(new javax.swing.ImageIcon("/media/jorge/Archivos/Proyectos/SAAL/src/Imagen/cancel.png")); // NOI18N
         JButtonSalir.setText("Salir");
         JButtonSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

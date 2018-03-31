@@ -68,7 +68,7 @@ public class ControlProducto {
      */
     public void iniciaControlProductoAgotado() throws SQLException {
         VentanaProductosAgotados ventanaProductosAgotados =new VentanaProductosAgotados (this);
-        ventanaProductosAgotados.cargaComboBox2();
+        ventanaProductosAgotados.cargaTabla();
         ventanaProductosAgotados.setVisible(true);
     }
     
@@ -164,7 +164,7 @@ public class ControlProducto {
        return eliminarProducto;
     }
     
-    public ArrayList llenaComboBox2() {
+    public ArrayList llenaTabla() {
         ArrayList listaProductosCantidad = new ArrayList();
         listaProductosCantidad = servicioProducto1.recuperaProductosYCantidad();
         return listaProductosCantidad;
