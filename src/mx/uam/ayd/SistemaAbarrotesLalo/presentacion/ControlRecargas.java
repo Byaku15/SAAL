@@ -16,7 +16,7 @@ public class ControlRecargas {
 
     ServicioCompañia ServicioCompañia1 = new ServicioCompañia();
     ServicioRecarga servicioRecarga1= new ServicioRecarga();
-    Compañia modificarCompañia;
+    Compañia modificarCompañia, eliminarCompañia;
 
     /**
      * Inicializa la ventana referente a los casos de uso de recargas y compañias
@@ -27,11 +27,19 @@ public class ControlRecargas {
         ventanaRecargas.setVisible(true);
     }
     
-      void iniciaControlModificarCompañia()throws SQLException  {
+    void iniciaControlModificarCompañia()throws SQLException  {
        VentanaModifcarCompañia ventanaModifcarCompañia= new VentanaModifcarCompañia(this);
        ventanaModifcarCompañia.cargaComboBox();
        ventanaModifcarCompañia.setVisible(true);
     }
+    
+    void iniciaControlEliminarCompañia()throws SQLException  {
+       VentanaEliminarCompañia ventanaEliminarCompañia= new VentanaEliminarCompañia(this);
+       ventanaEliminarCompañia.cargaComboBox();
+       ventanaEliminarCompañia.setVisible(true);
+    }
+    
+    /********************************************************************************************************SPRINT 3*****************************************/
      /**
      *Cuando se termine cualquier caso de uso, este metodo permite volver a mostrar
      * la pantalla principal
@@ -72,9 +80,10 @@ public class ControlRecargas {
      * @param nombre.
      * @return estado
      */
-      boolean AgregarCompañia(String nombre) throws SQLException {
-     boolean estado= ServicioCompañia1.AgregarCompañia(nombre);
-         return estado;
+      
+    boolean AgregarCompañia(String nombre) throws SQLException {
+        boolean estado= ServicioCompañia1.AgregarCompañia(nombre);
+        return estado;
     }
     /**
      * Agrega una nueva entidad de la clase recargas, solicitando el monto de 
@@ -82,23 +91,25 @@ public class ControlRecargas {
      * @param monto, fecha actual.
      * @return estado
      */
-        boolean AgregarRecarga(int monto, LocalDate fechaActual, String compañia) throws SQLException {
+    boolean AgregarRecarga(int monto, LocalDate fechaActual, String compañia) throws SQLException {
         boolean estado=servicioRecarga1.AgregarRecarga(monto, fechaActual,compañia);
         return estado;
     }
-   /**
+    /**
      * Regresa un areglo de string para llenar el comboBox con los nombres
      * de las compañias dentro de la base de datos
      * @throws SQLException
      * @return listaCompañias
      */
+        
     ArrayList<String> llenaComboBox() throws SQLException {
         ArrayList<String> listaCompañias=new ArrayList<String>();
         listaCompañias= ServicioCompañia1.recuperarCompañias();
         return listaCompañias;
     }
+    
     Compañia modificarCompañia(String id, String nombre) {
-       modificarCompañia= ServicioCompañia1.modificarCompañia(id, nombre);
+       modificarCompañia = ServicioCompañia1.modificarCompañia(id, nombre);
        return modificarCompañia;
     }
 
@@ -114,4 +125,18 @@ public class ControlRecargas {
         listarecargas= ServicioCompañia1.recuperarCompañia();
         return listarecargas;
     }*/
+    
+    /**************************************************************************************************************************SPRINT 3 ******************************************/
+    Compañia eliminarDatosCompañia(String nombre) {
+        eliminarCompañia = ServicioCompañia1.eliminarCompañia(nombre);
+        /*
+        VentanaEliminarCompañia cuadroCompañia1 = new VentanaEliminarCompañia(this);
+        if(eliminarCompañia == null)           
+            cuadroCompañia1.compañiaEliminada();
+        else
+            cuadroCompañia1.compañiaNoEliminada();
+        */
+        return eliminarCompañia;
+
+    }
 }

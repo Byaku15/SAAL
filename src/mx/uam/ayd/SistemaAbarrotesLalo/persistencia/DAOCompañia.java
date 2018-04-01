@@ -32,8 +32,8 @@ public class DAOCompañia {
      * @throws SQLException
      */
     public boolean AgregarCompañia(String nombre) throws SQLException  {
- Statement statement = BaseDeDatos.getConexion().createStatement();
-  Random al= new Random();
+        Statement statement = BaseDeDatos.getConexion().createStatement();
+        Random al= new Random();
         int id = al.nextInt(1000);
         try {
             statement.execute("INSERT INTO COMPAÑIA (IDCOMPAÑIA, NOMBRE) \n"
@@ -95,4 +95,13 @@ public class DAOCompañia {
         }  
        return lista;
     }
+    
+    /*************************************************************************************************SPRINT 3***********************************/
+    public Compañia eliminarCompañia(String nombre){
+        BaseDeDatos.getConexion();
+        ResultSet rs = BaseDeDatos.eliminaCompañia(nombre);
+        return null;
+        
+    }
+    
 }
