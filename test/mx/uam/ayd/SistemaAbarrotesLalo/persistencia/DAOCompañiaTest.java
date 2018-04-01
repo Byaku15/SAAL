@@ -47,7 +47,7 @@ public class DAOCompañiaTest {
         System.out.println("AgregarCompa\u00f1ia");
         String nombre = "";
         DAOCompañia instance = new DAOCompañia();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.AgregarCompañia(nombre);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
@@ -61,7 +61,7 @@ public class DAOCompañiaTest {
     public void testRecuperarCompañias() throws Exception {
         System.out.println("recuperarCompa\u00f1ias");
         DAOCompañia instance = new DAOCompañia();
-        ArrayList<String> expResult = null;
+        ArrayList<String> expResult = instance.recuperarCompañias();
         ArrayList<String> result = instance.recuperarCompañias();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
@@ -91,11 +91,27 @@ public class DAOCompañiaTest {
     public void testRecuperarCompañia() {
         System.out.println("recuperarCompa\u00f1ia");
         DAOCompañia instance = new DAOCompañia();
-        ArrayList<String> expResult = null;
+        ArrayList<String> expResult = instance.recuperarCompañia();
         ArrayList<String> result = instance.recuperarCompañia();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
     //    fail("The test case is a prototype.");
+    }
+    
+        /**
+     * Test of eliminarCompañia method, of class DAOCompañia.
+     */
+    @Test
+    public void testEliminarCompañia() {
+        
+        
+        System.out.println("recuperarCompa\u00f1ia");
+        DAOCompañia instance = new DAOCompañia();
+        Compañia expResult = null;
+        Compañia result = instance.eliminarCompañia("prueba");
+        assertEquals(expResult, result);
+        
+        
     }
     
 }
