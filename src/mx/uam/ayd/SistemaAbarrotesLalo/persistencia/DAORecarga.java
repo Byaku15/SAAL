@@ -114,7 +114,7 @@ public class DAORecarga {
     public boolean AgregaRecarga(Recarga recarga1) throws SQLException {
           Statement statement = BaseDeDatos.getConexion().createStatement();
         Random al= new Random();
-        int id = al.nextInt(1000);
+        int id = id+tamaño();
         int dia= recarga1.getFechaActual().getDayOfMonth();
         int mes= recarga1.getFechaActual().getMonthValue();
         int año=recarga1.getFechaActual().getYear();
@@ -122,6 +122,20 @@ public class DAORecarga {
                 + "VALUES (" + id + "," + recarga1.getMonto() + "," + "'"+dia+"-"+mes+"-"+año+"',"+"'"+recarga1.getCompañia()+"'"+")");
         return true;
     }
+    /**
+    *Recupera el numero de elementos contenidos en la base de datos
+    * @return tamaño
+     * @throws SQLException
+     */
+    public int tamaño() throws SQLException{
+        BaseDeDatos.getConexion();
+            ventas = BaseDeDatos.consulta("SELECT MONTO FROM VENTA");
+            while (ventas.next()) {
+                contador++;
+            }
+             return contador;
+    }
+
 
     /**
     * Devuelve la compañia telefonica con menores ventas dentro de un periodo
