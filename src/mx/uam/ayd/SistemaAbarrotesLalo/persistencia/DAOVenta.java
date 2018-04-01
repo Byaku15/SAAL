@@ -116,7 +116,11 @@ public class DAOVenta {
                 + "VALUES (" + id + "," + venta1.getMonto() + "," + "'"+dia+"-"+mes+"-"+año+"')");
         return true;
     }
-    
+    /**
+    *Recupera el numero de elementos contenidos en la base de datos
+    * @return tamaño
+     * @throws SQLException
+     */
     public int tamaño() throws SQLException{
         BaseDeDatos.getConexion();
             ventas = BaseDeDatos.consulta("SELECT MONTO FROM VENTA");
