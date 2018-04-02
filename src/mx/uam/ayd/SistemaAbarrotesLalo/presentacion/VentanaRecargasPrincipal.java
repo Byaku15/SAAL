@@ -9,9 +9,13 @@ import java.util.logging.Logger;
  * @author Nallely
  */
 public class VentanaRecargasPrincipal extends javax.swing.JFrame {
-  listener listener1= new listener();
-ControlRecargas controlRecargas1=new ControlRecargas();
+    
+    listener listener1= new listener();
+
+    ControlRecargas controlRecargas1=new ControlRecargas();
+    
     /**
+     * CONSTRUCTOR
      * Creates new form VentanaRecargasPrincipal
      * @param controlRecargas1
      */
@@ -133,12 +137,22 @@ ControlRecargas controlRecargas1=new ControlRecargas();
         controlRecargas1.RegistrarRecarga();
     }                                                        
 
+    /*****************************************************************************************************************SPRINT-3 *************************/
     private void jButtonEliminarCompañiaActionPerformed(java.awt.event.ActionEvent evt) {                                                        
-        // TODO add your handling code here:
+        dispose();
+        try {
+           controlRecargas1.iniciaControlEliminarCompañia();
+        } catch (SQLException ex) {
+           Logger.getLogger(VentanaProveedores.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        
     }                                                       
+    /*****************************************************************************************************************FIN SPRINT-3 *************************/
 
     private void jButtonModificarCompañiaActionPerformed(java.awt.event.ActionEvent evt) {                                                         
-         dispose();
+       dispose();
        try {
            controlRecargas1.iniciaControlModificarCompañia();
        } catch (SQLException ex) {

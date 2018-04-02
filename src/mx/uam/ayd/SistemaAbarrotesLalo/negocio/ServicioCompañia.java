@@ -16,7 +16,7 @@ import mx.uam.ayd.SistemaAbarrotesLalo.persistencia.DAOCompañia;
  */
 public class ServicioCompañia {
    DAOCompañia DAOCompañia1= new DAOCompañia();
-   Compañia modificarCompañia;
+   Compañia modificarCompañia, eliminarCompañia;
     
     /**
      * Envia al DAO la información necesaria para crear una compañia, devuelve
@@ -27,7 +27,7 @@ public class ServicioCompañia {
      */
     public boolean AgregarCompañia(String nombre) throws SQLException {
         boolean estado= DAOCompañia1.AgregarCompañia(nombre);
-         return estado;       
+        return estado;       
     }
     /**
      * Devulve un arreglo con los nombres de todas las compañias dentro de la 
@@ -60,5 +60,11 @@ public class ServicioCompañia {
         ArrayList<String> listarecargas1=new ArrayList<String>();
         listarecargas1= DAOCompañia1.recuperarCompañia();
         return listarecargas1;
+    }
+    
+    /*********************************************************************************************SPRINT 3**************************/
+    public Compañia eliminarCompañia(String nombre){
+        eliminarCompañia = DAOCompañia1.eliminarCompañia(nombre);
+        return eliminarCompañia;
     }
 }

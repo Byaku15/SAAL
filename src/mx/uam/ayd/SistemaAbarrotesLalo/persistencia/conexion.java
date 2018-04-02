@@ -270,4 +270,22 @@ public class conexion {
         return null;
     }
     
+        ResultSet eliminaCompañia(String nombre) {
+        ResultSet rs = null;
+        try{
+            stmt = con.prepareStatement("DELETE FROM COMPAÑIA " + "WHERE NOMBRE =?");
+            stmt.setString(1,nombre);
+        
+            int retorno = stmt.executeUpdate();
+            if(retorno>0)
+            {
+                JOptionPane.showMessageDialog(null,"La compañía ha sido eliminada");  
+                System.out.println("Compañía eliminada correctamente");
+            }
+        
+            }catch(Exception ex){
+                JOptionPane.showMessageDialog(null,"Error"+ex.getMessage());
+            }
+        return null;
+    }
 }
