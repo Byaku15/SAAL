@@ -17,7 +17,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Byakuya
+ * @author HC
  */
 public class ServicioProductoTest {
     
