@@ -114,7 +114,7 @@ public class DAORecarga {
     public boolean AgregaRecarga(Recarga recarga1) throws SQLException {
           Statement statement = BaseDeDatos.getConexion().createStatement();
         Random al= new Random();
-        int id = id+tamaño();
+        int id = 1+tamaño();
         int dia= recarga1.getFechaActual().getDayOfMonth();
         int mes= recarga1.getFechaActual().getMonthValue();
         int año=recarga1.getFechaActual().getYear();
