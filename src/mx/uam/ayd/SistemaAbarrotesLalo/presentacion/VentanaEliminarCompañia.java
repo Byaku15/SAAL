@@ -122,7 +122,11 @@ public class VentanaEliminarCompañia extends javax.swing.JFrame {
         controlRecargas1.finalizaControlSecundario();
 
     }//GEN-LAST:event_jButtonVolverActionPerformed
-
+    /**
+     * Método necesario para borrar. Primero utiliza el método de la clase ControlRecargas  eliminarDatosCompañía(String nombre)
+     * para borrar la compañía con dicho nombre y después reinicia el ControlRecargas con el método iniciaCointrolEliminarCopañía()
+     */
+  
     private void jButtonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarActionPerformed
         String nom = (String) jComboBoxNom.getSelectedItem(); 
         controlRecargas1.eliminarDatosCompañia(nom);

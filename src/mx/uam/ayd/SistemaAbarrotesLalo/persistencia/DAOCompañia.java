@@ -97,6 +97,12 @@ public class DAOCompañia {
     }
     
     /*************************************************************************************************SPRINT 3***********************************/
+    /**
+     * Método necesario para borrar compañía
+     * @param nombre
+     * @return
+     * 
+     */
     public Compañia eliminarCompañia(String nombre){
         BaseDeDatos.getConexion();
         ResultSet rs = BaseDeDatos.eliminaCompañia(nombre);

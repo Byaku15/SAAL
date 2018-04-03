@@ -32,7 +32,7 @@ public class ControlRecargas {
        ventanaModifcarCompañia.cargaComboBox();
        ventanaModifcarCompañia.setVisible(true);
     }
-    
+    /********************************************************************************************************SPRINT 3*****************************************/
     void iniciaControlEliminarCompañia()throws SQLException  {
        VentanaEliminarCompañia ventanaEliminarCompañia= new VentanaEliminarCompañia(this);
        ventanaEliminarCompañia.cargaComboBox();
@@ -127,15 +127,14 @@ public class ControlRecargas {
     }*/
     
     /**************************************************************************************************************************SPRINT 3 ******************************************/
+    /**
+     * Método necesario para borrar compañía
+     * @param nombre
+     * @return
+     * 
+     */
     Compañia eliminarDatosCompañia(String nombre) {
         eliminarCompañia = ServicioCompañia1.eliminarCompañia(nombre);
-        /*
-        VentanaEliminarCompañia cuadroCompañia1 = new VentanaEliminarCompañia(this);
-        if(eliminarCompañia == null)           
-            cuadroCompañia1.compañiaEliminada();
-        else
-            cuadroCompañia1.compañiaNoEliminada();
-        */
         return eliminarCompañia;
 
     }
