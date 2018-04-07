@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package mx.uam.ayd.SistemaAbarrotesLalo.negocio;
-
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import mx.uam.ayd.SistemaAbarrotesLalo.modelo.Producto;
@@ -17,7 +16,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Byakuya
+ * @author HC 
  */
 public class ServicioProductoTest {
     
@@ -42,32 +41,36 @@ public class ServicioProductoTest {
 
     /**
      * Test of buscaProducto method, of class ServicioProducto.
+     * @throws java.lang.Exception
      */
     @Test
     public void testBuscaProducto() throws Exception {
-        System.out.println("buscaProducto");
-        String nombreProducto = "";
+    System.out.println("Test de buscaProducto");
+        String nombreProducto = "Bombones";
         ServicioProducto instance = new ServicioProducto();
-        double expResult = 0.0;
+        double expResult =  -1;
         double result = instance.buscaProducto(nombreProducto);
-        assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
+        assertEquals(expResult, result,-1 );
+        if(result !=expResult){
+         //TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
+       }
     }
 
     /**
      * Test of mostrarProductos method, of class ServicioProducto.
-     */
+          */
     @Test
     public void testMostrarProductos() throws Exception {
-        System.out.println("mostrarProductos");
-        String marca = "";
+        System.out.println("Test de mostrarProductos");
+        String marca = "Marinela";
         ServicioProducto instance = new ServicioProducto();
         ResultSet expResult = null;
         ResultSet result = instance.mostrarProductos(marca);
-        assertEquals(expResult, result);
+        if(result==null){
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
+        }
     }
 
     /**
@@ -75,14 +78,15 @@ public class ServicioProductoTest {
      */
     @Test
     public void testMostrarProductosPorCaducar() {
-        System.out.println("mostrarProductosPorCaducar");
-        String marcaActual = "";
+        System.out.println("Test de mostrarProductosPorCaducar");
+        String marcaActual = "Marinela";
         ServicioProducto instance = new ServicioProducto();
         ResultSet expResult = null;
         ResultSet result = instance.mostrarProductosPorCaducar(marcaActual);
-        assertEquals(expResult, result);
+        if (result==null ){
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
+    }
     }
 
     /**
@@ -90,51 +94,37 @@ public class ServicioProductoTest {
      */
     @Test
     public void testBuscaProductoYExistencias() throws Exception {
-        System.out.println("buscaProductoYExistencias");
-        String nombreProducto = "";
+        System.out.println("test de buscaProductoYExistencias");
+        String nombreProducto = "Compus";
         int existencias = 0;
         ServicioProducto instance = new ServicioProducto();
-        double expResult = 0.0;
+        double expResult = -1.0;
         double result = instance.buscaProductoYExistencias(nombreProducto, existencias);
-        assertEquals(expResult, result, 0.0);
+        assertEquals(expResult, result, -1.0);
+        if (result != expResult){
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
+        }
     }
 
-    /**
-     * Test of actualizaExistencias method, of class ServicioProducto.
-     */
-    @Test
-    public void testActualizaExistencias() throws Exception {
-        System.out.println("actualizaExistencias");
-        ArrayList<String> productos = null;
-        ArrayList<Integer> cantidades = null;
-        ServicioProducto instance = new ServicioProducto();
-        boolean expResult = false;
-        boolean result = instance.actualizaExistencias(productos, cantidades);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of agregarProducto method, of class ServicioProducto.
-     */
+   
     @Test
     public void testAgregarProducto() throws Exception {
-        System.out.println("agregarProducto");
-        int id = 0;
-        String nombre = "";
-        String caducidad = "";
+        System.out.println("test de agregarProducto");
+        int id = 11;
+        String nombre = "Doritos";
+        String caducidad = "12/Diciembre2018";
         int existencias = 0;
-        double precio = 0.0;
-        String marca = "";
+        double precio = 15.0;
+        String marca = "Barcel";
         ServicioProducto instance = new ServicioProducto();
-        Producto expResult = null;
+        ResultSet expResult = null;
         Producto result = instance.agregarProducto(id, nombre, caducidad, existencias, precio, marca);
         assertEquals(expResult, result);
+        if (result != expResult){
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
+        }
     }
 
     /**
@@ -142,13 +132,14 @@ public class ServicioProductoTest {
      */
     @Test
     public void testRecuperarProductos() throws Exception {
-        System.out.println("recuperarProductos");
+        System.out.println("Test de recuperarProductos");
         ServicioProducto instance = new ServicioProducto();
         ArrayList<String> expResult = null;
         ArrayList<String> result = instance.recuperarProductos();
-        assertEquals(expResult, result);
+        if (result==null){
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
+        }
     }
 
     /**
@@ -156,19 +147,21 @@ public class ServicioProductoTest {
      */
     @Test
     public void testModificarProducto() {
-        System.out.println("modificarProducto");
-        String id = "";
-        String nombre = "";
-        String caducidad = "";
-        String existencias = "";
-        String precio = "";
-        String marca = "";
+        System.out.println("Tes de modificarProducto");
+        String id = "8";
+        String nombre = "chocolates";
+        String caducidad = "22/Diciembre/2018";
+        String existencias = "2";
+        String precio = "15";
+        String marca = "choco";
         ServicioProducto instance = new ServicioProducto();
-        Producto expResult = null;
+        ResultSet expResult = null;
         Producto result = instance.modificarProducto(id, nombre, caducidad, existencias, precio, marca);
         assertEquals(expResult, result);
+        if (result != expResult){
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
+        }
     }
 
     /**
@@ -176,13 +169,14 @@ public class ServicioProductoTest {
      */
     @Test
     public void testRecuperaProductosYCaducidad() throws Exception {
-        System.out.println("recuperaProductosYCaducidad");
+        System.out.println("Test de recuperaProductosYCaducidad");
         ServicioProducto instance = new ServicioProducto();
-        ArrayList expResult = null;
-        ArrayList result = instance.recuperaProductosYCaducidad();
-        assertEquals(expResult, result);
+        ArrayList<String> expResult = null;
+        ArrayList<String> result = instance.recuperaProductosYCaducidad();
+        if (result==null){
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
+        }
     }
 
     /**
@@ -190,14 +184,17 @@ public class ServicioProductoTest {
      */
     @Test
     public void testEliminaProducto() {
-        System.out.println("eliminaProducto");
-        String nombre = "";
+        System.out.println("Tes de eliminaProducto");
+        String nombre = "cacahuates";
         ServicioProducto instance = new ServicioProducto();
         Producto expResult = null;
         Producto result = instance.eliminaProducto(nombre);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
+        if (result != expResult){
+        
         fail("The test case is a prototype.");
     }
     
+    }
 }
+
