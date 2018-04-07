@@ -192,7 +192,7 @@ public class DAOProducto {
         ResultSet producto = BaseDeDatos.elimina(nombre);
         return null;
     }
-
+     // Recupera un arreglo ProductosYCantidad
     public ArrayList recuperaProductosYCantidad() {
         ArrayList<String> lista=new ArrayList<String>();
         BaseDeDatos.getConexion();

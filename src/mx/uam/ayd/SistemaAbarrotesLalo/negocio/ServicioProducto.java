@@ -167,7 +167,10 @@ public class ServicioProducto {
         eliminarProducto = daoProducto1.eliminarProducto(nombre);
         return eliminarProducto;
     }
-
+ /****************************************************************************Sprint 3
+       * Este metodo se encarga de recuperar una lista de productos y cantidad
+     * @return 
+     * @throws java.sql.SQLException2**********************************************************/
     public ArrayList recuperaProductosYCantidad() {
         ArrayList listaProductosCantidad = new  ArrayList ();
         listaProductosCantidad = daoProducto1.recuperaProductosYCantidad();

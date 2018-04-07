@@ -165,7 +165,9 @@ public class VentanaProductosAgotados extends javax.swing.JFrame {
             System.out.println("El producto es: " +listaProductosCantidad);
         }
     }*/
-    
+     /**
+     * Muestra la tabla ProductosAgotados
+     */
     public void cargaTabla () throws SQLException{
         ArrayList<String> listaProductos=new ArrayList<String>();
         listaProductos=controlProducto1.llenaTabla();
