@@ -31,16 +31,9 @@ String periodo="Año";
     public ServicioReporteTest() {
     }
     
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-     
+    /**
+     *Prueba que el metodo generarReporteTodo este recibiendo correctamente los datos del DAO    
+     */ 
     @Test
      public void generarReporteTodo() throws SQLException {
          montoTotalRecargas=servicioRecarga1.dameMontoTotalRecargas(periodo);  
@@ -57,6 +50,9 @@ String periodo="Año";
         fail("No se han obtenido los datos de la base");
         }
      }
+    /**
+     *Prueba que el metodo generarReporteRecargas( este recibiendo correctamente los datos del DAO    
+     */ 
      @Test
      public void generarReporteRecargas() throws SQLException {
          montoTotalRecargas=servicioRecarga1.dameMontoTotalRecargas(periodo);  
@@ -70,6 +66,9 @@ String periodo="Año";
         fail("No se han obtenido los datos de la base");
         }
      }
+    /**
+     *Prueba que el metodo generarReporteProductos este recibiendo correctamente los datos del DAO    
+     */ 
      @Test
      public void generarReporteProductos() throws SQLException {
           montoTotalVenta=servicioventa1.dameMontoTotalVentas(periodo);
