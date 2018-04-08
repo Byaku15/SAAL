@@ -35,9 +35,9 @@ String periodo="Mes";
       fechaActual = LocalDate.now();
     }
     
-    @After
-    public void tearDown() {
-    }
+/**
+     *Prueba de que el metodo AgregarRecarga esta recibiendo correctamente los datos del DAO      
+     */
 
     @Test
    public void AgregarRecarga() throws Exception {
@@ -48,6 +48,10 @@ String periodo="Mes";
        boolean estado=dao1.AgregaRecarga(recarga1);       
        assertEquals(estado, esperado);
    }
+     /**
+     *Prueba de que el metodo  dameMontoTotalRecargas esta recibiendo correctamente los datos del DAO      
+     */
+
     @Test
    public void dameMontoTotalRecargas() throws Exception {
       montoTotal= dao1.recuperaMontos(periodo);     
@@ -55,6 +59,10 @@ String periodo="Mes";
         fail("No se han obtenido los datos de la base");
         }
    }
+     /**
+     *Prueba de que el metodo dameNumeroDeRecargas esta recibiendo correctamente los datos del DAO      
+     */
+
     @Test
    public void  dameNumeroDeRecargas() throws SQLException {
         numeroRecargas=dao1.recuperaTamaño(periodo);
@@ -62,7 +70,10 @@ String periodo="Mes";
         fail("No se han obtenido los datos de la base");
         }
    }
-    
+    /**
+     *Prueba de que el metodo dameCompañiaMax esta recibiendo correctamente los datos del DAO      
+     */
+
    @Test
    public void dameCompañiaMax() throws SQLException {
        compañiaMax = dao1.recuperaCompañiaMax(periodo);
@@ -70,6 +81,10 @@ String periodo="Mes";
       fail("No se han obtenido los datos de la base");
         }
    }
+     /**
+     *Prueba de que el metodo dameCompañiaMin esta recibiendo correctamente los datos del DAO      
+     */
+
     @Test
    public void dameCompañiaMin() throws SQLException {
        compañiaMin = dao1.recuperaCompañiaMin(periodo);
@@ -77,6 +92,10 @@ String periodo="Mes";
         fail("No se han obtenido los datos de la base");
         }
    }
+     /**
+     *Prueba de que el metodo dameMontoPasadoRecargas esta recibiendo correctamente los datos del DAO      
+     */
+
    @Test
    public void dameMontoPasadoRecargas() throws SQLException {
         montoPasado = dao1.recuperaMontosPasados(periodo);
